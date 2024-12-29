@@ -1,0 +1,93 @@
+@if (!isMobile()) {
+<div class="hidden laptop:block">
+  <div >
+    <ul
+      class="flex flex-row justify-between p-8 items-center bg-primary text-white h-20  "
+    >
+      <div class="flex space-x-9">
+        <li class="cursor-pointer font-bold text-xl">C.</li>
+        @for (item of routes(); track $index) {
+
+        <li
+          class="cursor-pointer"
+          [routerLink]="[item.route]"
+          routerLinkActive="underline decoration-2 underline-offset-8"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          {{ item.name }}
+        </li>
+        }
+      </div>
+
+      <li class="ml-auto flex cursor-pointer">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="download_2"
+        ></mat-icon>
+        Download CV
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <router-outlet />
+</div>
+} @else {
+<div class="block laptop:hidden">
+  <div
+    class="flex flex-row justify-between p-3 items-center bg-primary text-white h-20"
+  >
+    <button mat-icon-button (click)="toogleSideNav()">
+      <mat-icon class="text-white">menu</mat-icon>
+    </button>
+
+    <div class="flex space-x-2">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="download_2"
+      ></mat-icon>
+
+      <h1 class="text-center">Download CV</h1>
+    </div>
+  </div>
+
+  <mat-sidenav-container class="h-screen flex-1">
+    <mat-sidenav [opened]="openSideNav()" fixedTopGap="56">
+      <ul
+        class="flex flex-col p-8 space-y-8 items-start bg-primary text-white h-full"
+      >
+        @for (item of routes(); track $index) {
+
+        <mat-nav-list
+          class="cursor-pointer"
+          (click)="navigateToOtherSection(item.route)"
+          [routerLink]="[item.route]"
+          routerLinkActive="underline decoration-2 underline-offset-8"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <div class="flex space-x-2">
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Home"
+              [fontIcon]="item.icon"
+            ></mat-icon>
+            <div>{{ item.name }}</div>
+          </div>
+        </mat-nav-list>
+
+        }
+      </ul>
+    </mat-sidenav>
+
+
+
+    <mat-sidenav-content>
+      <router-outlet />
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+}
