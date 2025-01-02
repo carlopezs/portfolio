@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, input, InputSignal } from '@angular
 import { Project } from '@models/project.model';
 
 @Component({
-  selector: 'general-project',
+  selector: 'home-project',
   imports: [CommonModule],
   templateUrl: './project.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

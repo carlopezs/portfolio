@@ -20,7 +20,9 @@
     "baseUrl": "./src",
     "paths": {
 
-      "@models/*":["app/models/*"]
+      "@models/*":["app/models/*"],
+      "@components/*":["app/components/*"],
+      "@data/*":["app/data/*"]
     }
   },
   "angularCompilerOptions": {

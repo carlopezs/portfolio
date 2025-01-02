@@ -1,1 +1,66 @@
-<p>about works!</p>
+<div class="bg-primary text-white py-16 px-12 pt-14">
+  <div class="flex laptop:flex-row laptop:justify-between laptop:space-x-12">
+    <div
+      class="flex flex-col justify-center space-y-5 w-full laptop:w-2/3 laptop:justify-start"
+    >
+      <h1 class="text-3xl font-bold">Carlos López</h1>
+
+      <h2 class="text-xl">Software Developer</h2>
+
+      <p class="text-sm">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae esse nihil
+        a maiores ullam neque sapiente, sit maxime iusto debitis eum unde
+        repellat, veniam, quod saepe vero incidunt quo tenetur. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Excepturi explicabo labore
+        voluptatum autem? Dolorem placeat ullam perferendis officiis, itaque
+        molestiae nisi beatae eligendi qui quisquam, obcaecati vero eaque, odio
+        unde. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quasicupiditate doloremque corporis facilis exercitationem, repellendus
+        aliquid, quo
+      </p>
+
+      <button
+        type="button"
+        class="border w-36 py-2 px-4 rounded text-center hover:bg-secondary hover:border-secondary"
+      >
+        <div class="flex justify-center items-center space-x-2">
+          <span class="text-sm">Hire Me</span>
+        </div>
+      </button>
+    </div>
+
+    <div class="hidden w-1/2 relative laptop:flex laptop:justify-center">
+      <div class="bg-secondary h-80 w-64 absolute rounded-sm"></div>
+
+      <img
+        class="object-contain h-80 absolute left-36 rounded-sm"
+        src="images/mecoffe.jpg"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-col space-y-5 py-11 px-12 text-primary">
+  <div class="flex flex-col justify-center">
+    <h1
+      class="mb-4 flex-grow font-bold text-xl text-center laptop:text-left laptop:text-2xl"
+    >
+      Experience History
+    </h1>
+
+    <p class="text-sm">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo enim
+      esse, molestiae porro assumenda itaque provident maiores cumque optio sint
+      id hic aut non ad repudiandae cum ducimus! Saepe, nulla?
+    </p>
+  </div>
+
+  <div class="flex flex-col">
+    <div class="grid  gap-10 text-justify laptop:grid-cols-4">
+      @for (job of jobs(); track $index) {
+      <about-job [job]="job" />
+
+      }
+    </div>
+  </div>
+</div>
