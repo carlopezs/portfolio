@@ -45,7 +45,7 @@
     <h1
       class="mb-4 flex-grow font-bold text-xl text-center laptop:text-left laptop:text-2xl"
     >
-      Experience History
+      Soft Skills
     </h1>
 
     <p class="text-sm">
@@ -57,8 +57,8 @@
 
   <div class="flex flex-col">
     <div class="grid  gap-10 text-justify laptop:grid-cols-4">
-      @for (job of jobs(); track $index) {
-      <about-job [job]="job" />
+      @for (softSkill of softSkills(); track $index) {
+      <about-job [softSkill]="softSkill" />
 
       }
     </div>

@@ -8,7 +8,7 @@ module.exports = {
 
       colors: {
         secondary: '#138086',
-        thertiary: '#062628',
+        thertiary: '#0D6767',
         primary: '#42999E',
         white: '#FFFFFF',
         background:"#FFFFFF"
@@ -31,6 +31,10 @@ module.exports = {
 
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-animated'),
+    require('tailwind-scrollbar-hide')
+
+  ],
 }
 

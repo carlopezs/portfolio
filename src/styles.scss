@@ -26,19 +26,27 @@ mat-sidenav {
   width: 200px;
 }
 
-.fade-in {
-	opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 2s;
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-@keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
 }
+
+
+::-webkit-scrollbar-thumb {
+  background: #138086;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
+
+

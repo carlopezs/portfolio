@@ -1,7 +1,9 @@
+
 import { Component, signal, WritableSignal } from '@angular/core';
 import { JobComponent } from '@components/about/job/job.component';
-import { jobs as dataJobs } from '@data/jobs';
-import { Job } from '@models/job.model';
+import { softSkills as dataSoftSkill } from '@data/soft_skills';
+
+import { SoftSkill } from '@models/soft_skill.model';
 
 @Component({
   selector: 'app-about',
@@ -9,5 +11,5 @@ import { Job } from '@models/job.model';
   templateUrl: './about.component.html',
 })
 export class AboutComponent {
-  public jobs: WritableSignal<Job[]> = signal([...dataJobs]);
+  public softSkills: WritableSignal<SoftSkill[]> = signal([...dataSoftSkill]);
 }

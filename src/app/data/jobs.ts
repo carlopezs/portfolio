@@ -1,4 +1,4 @@
-import { Job } from './../models/job.model';
+import { Job } from "@models/job.model";
 
 export const jobs: Job[] = [
   {
