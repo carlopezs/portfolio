@@ -1,0 +1,90 @@
+<div class="text-justify px-16">
+
+
+  <div class="flex flex-col w-auto h-auto mt-16">
+    <div
+      class="flex flex-col items-center mb-5 laptop:flex-row justify-between"
+    >
+      <h1
+        class="text-primary mb-4 font-bold text-xl laptop:text-2xl flex-auto w-1/2"
+      >
+        My Hard Skills
+      </h1>
+
+      <p
+        class="m-0 laptop:w-1/2 text-sm text-secondary text-clip overflow-hidden ..."
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore in fugit
+        accusamus omnis eum suscipit, sit molestiae Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Labore in fugit Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Labore in fugit
+      </p>
+    </div>
+
+    <div
+      class="grid justify-items-center gap-y-5 grid-cols-3 mt-2 laptop:grid-cols-6 laptop:gap-x-10"
+    >
+      @for (tool of tools(); track $index) {
+      <div
+        class="flex flex-col items-center cursor-pointer justify-center space-y-3 hover:scale-110"
+      >
+        <div
+          class="flex items-center justify-center w-24 h-24 rounded-md bg-gray-100 hover:bg-secondary"
+        >
+          <img [src]="tool.image" class="w-11" />
+        </div>
+
+        <div class="text-sm">{{ tool.title }}</div>
+      </div>
+
+      }
+    </div>
+  </div>
+
+  <!-- Section: Seccion de sobre mi -->
+
+  <div class="mt-16">
+    <!--   <p class="text-4xl text-primary font-bold">"</p> -->
+
+    <div class="flex flex-col space-y-6 text-xl laptop:text-2xl tracking-wide">
+      <div class="flex items-center space-x-4 flex-row">
+        <p class="text-primary self-start">
+          I Have A <b>Bachelor's Degree </b>in <b>Software Engineering.</b>
+        </p>
+
+        <hr class="flex-grow h-0.5 bg-secondary" />
+      </div>
+
+      <div class="flex items-center space-x-4 flex-row">
+        <hr class="flex-grow h-0.5 bg-secondary" />
+
+        <p class="text-primary self-end">
+          I live in <b>Ibarra</b>, a scenic and culturally rich city in northern
+          <b>Ecuador</b>.
+          <!--  My current residence is in <b>Ibarra, Ecuador.</b> -->
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="flex flex-col items-center space-y-7 mt-6 laptop:mt-11 laptop:flex-row laptop:justify-between"
+    >
+      <div class="flex justify-center rounded-full bg-secondary w-36 h-36 ml-7">
+        <img class="object-contain w-24" src="images/avatarme.png" />
+      </div>
+
+      <p
+        class="m-0 text-sm text-secondary text-clip overflow-hidden ... laptop:w-1/2"
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore in fugit
+        accusamus omnis eum suscipit, sit molestiae Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Labore in fugit Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Labore in fugit, Lorem ipsum dolor sit
+        amet consectetur adipisicing elit. Labore in fugit accusamus omnis eum
+        suscipit, sit molestiae Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Labore in fugit Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Labore in fugit
+      </p>
+    </div>
+  </div>
+</div>

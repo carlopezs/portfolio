@@ -1,4 +1,4 @@
-import { Tools } from "./tools.model";
+import { Tool } from "./tools.model";
 
 
 export interface Project {
@@ -6,5 +6,5 @@ export interface Project {
   title:string,
   image:string,
   description:string,
-  tools:Tools[]
+  tools:Tool[]
 }

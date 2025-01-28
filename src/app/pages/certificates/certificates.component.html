@@ -1,4 +1,4 @@
-<div class="bg-primary text-white px-12 py-14 laptop:py-20">
+<div class="common-vertical-padding bg-primary text-white py-14 laptop:py-20">
   <div class="flex flex-col space-y-3 laptop:flex-row laptop:items-center">
     <h1 class="text-3xl font-bold w-2/3">My Certificates</h1>
 
@@ -8,54 +8,18 @@
       eius reprehenderit? Soluta consequatur itaque eaque.Lorem, ipsum dolor sit
       amet consectetur adipisicing elit. Molestiae culpa porro placeat sint
       soluta ea ab error ad illo maxime quo qui mollitia, eum eius
-      reprehenderit? Soluta consequatur itaque eaque.Soluta consequatur itaque eaque.Lorem, ipsum dolor sit
-      amet consectetur adipisicing elit. Molestiae culpa porro placeat sint
-      soluta ea ab error ad illo maxime quo qui mollitia, eum eius
-      reprehenderit? Soluta consequatur itaque eaque
+      reprehenderit? Soluta consequatur itaque eaque.Soluta consequatur itaque
+      eaque.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+      culpa porro placeat sint soluta ea ab error ad illo maxime quo qui
+      mollitia, eum eius reprehenderit? Soluta consequatur itaque eaque
     </p>
   </div>
 </div>
 
-<div class="grid  gap-7 flex-wrap px-12 py-10 laptop:grid-cols-4">
-
+<div class="px-9 grid flex-wrap py-10 gap-5 laptop:gap-20 laptop:grid-cols-3">
   @for (certificate of certificates(); track $index) {
 
-    <div class="flex flex-col space-y-2 rounded-md pb-5 bg-primary text-white">
-      <img
-        class="object-fill h-1/2 rounded-t-md"
-        [src]="certificate.image"
-
-      />
-      <div class="flex flex-col space-y-3 px-5">
-        <h3 class="font-bold line-clamp-1">{{certificate.courseTitle}}</h3>
-
-        <div class="text-sm h-24 text-ellipsis ">
-          <p class=" line-clamp-4">
-            {{certificate.description}}
-          </p>
-
-        </div>
-
-        <button
-          type="button"
-          class="border border-white py-2 px-4 rounded text-center hover:text-white hover:bg-secondary hover:border-secondary hover:scale-105 laptop:w-36"
-        >
-          <div class="flex justify-center items-center space-x-2">
-            <span class="text-sm">Show</span>
-          </div>
-        </button>
-      </div>
-    </div>
+  <certificates-card [certificate]="certificate" />
 
   }
-
-
-
-
-
-
-
-
-
-
 </div>

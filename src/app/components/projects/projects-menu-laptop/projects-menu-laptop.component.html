@@ -1,0 +1,29 @@
+<cdk-virtual-scroll-viewport appendOnly itemSize="2" class="w-full h-auto">
+  <div
+    *cdkVirtualFor="let project of projects()"
+    class="laptop:flex laptop:justify-center"
+  >
+    <div
+      (click)="chooseProjectToShow(project.id)"
+      [ngClass]="{
+        'bg-thertiary animate-shake ': project.id === projectToShow().id
+      }"
+      class="bg-secondary mt-3 p-6 rounded-lg cursor-pointer hover:bg-thertiary laptop:flex laptop:flex-row laptop:w-11/12 laptop:h-40"
+    >
+      <div class="hidden justify-center w-1/2 laptop:flex">
+        <img class="object-contain w-10/12" src="images/delete.png" />
+      </div>
+
+      <div class="flex flex-col laptop:w-1/2">
+        <h1 class="text-sm font-bold laptop:text-lg">
+          {{ project.title }}
+        </h1>
+        <p
+          class="hidden text-sm line-clamp-2 max-w-full w-96 overflow-hidden text-ellipsis laptop:block"
+        >
+          {{ project.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</cdk-virtual-scroll-viewport>

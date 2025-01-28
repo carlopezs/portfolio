@@ -1,0 +1,60 @@
+<div class="bg-primary w-auto h-auto mt-16 py-16 px-16 text-white">
+  <div
+    class="flex flex-col space-y-7 items-center laptop:justify-between laptop:flex-row laptop:space-x-10"
+  >
+    <div class="flex flex-col laptop:w-1/2">
+      <h1 class="text-xl font-bold">My Experience</h1>
+
+      <p class="text-sm">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore in fugit
+        accusamus omnis eum suscipit, sit molestiae Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Labore in fugit Lorem ipsum dolor sit amet
+        consectetur adipisicing elit.
+      </p>
+    </div>
+
+    <div class="flex flex-col space-y-2 laptop:w-1/2">
+      <div class="flex flex-col space-y-2" [@slideInOut]>
+        <div class="border rounded-full max-w-44 h-auto px-4 py-2">
+          <p class="text-sm">
+            {{ actualJob().initDate | date : "dd/MM/YY" }} -
+            {{ actualJob().endDate | date : "dd/MM/YY" }}
+          </p>
+        </div>
+
+        <h1 class="text-xl font-bold">{{ actualJob().title }}</h1>
+
+        <hr />
+
+        <p class="text-sm mb-40">
+          {{ actualJob().description }}
+        </p>
+      </div>
+
+      <div class="h-4"></div>
+
+      <div class="flex flex-row justify-end space-x-5 text-sm">
+        <button
+          type="btn"
+          (click)="previousJob()"
+          [ngClass]="{
+            'text-gray-300': isFirstIndex(),
+            'hover:underline': !isFirstIndex()
+          }"
+        >
+          Previous
+        </button>
+        <button
+          type="btn"
+          [ngClass]="{
+            'text-gray-300': isLastIndex(),
+            'hover:underline': !isLastIndex()
+          }"
+          (click)="nextJob()"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

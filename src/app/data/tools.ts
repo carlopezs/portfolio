@@ -1,6 +1,6 @@
-import { Tools } from '@models/tools.model';
+import { Tool } from '@models/tools.model';
 
-export const tools:Tools[] = [
+export const tools:Tool[] = [
   { title: 'JavaScript', image: 'images/javascript.png' },
   { title: 'HTML', image: 'images/html.png' },
   { title: 'CSS', image: 'images/css.png' },

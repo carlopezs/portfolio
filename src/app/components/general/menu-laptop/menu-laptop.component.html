@@ -1,0 +1,35 @@
+
+  <div>
+    <ul
+      class="flex flex-row justify-between p-8 items-center bg-primary text-white h-20"
+    >
+      <div class="flex space-x-9">
+        <li class="cursor-pointer font-bold text-xl">C.</li>
+        @for (item of routes(); track $index) {
+
+        <li
+          class="cursor-pointer"
+          [routerLink]="[item.route]"
+          routerLinkActive="underline decoration-2 underline-offset-8"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          {{ item.name }}
+        </li>
+        }
+      </div>
+
+      <li class="ml-auto flex cursor-pointer">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="download_2"
+        ></mat-icon>
+        Download CV
+      </li>
+    </ul>
+  </div>
+
+  <hr />
+
+
+<ng-content> </ng-content>

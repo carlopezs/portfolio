@@ -1,0 +1,25 @@
+<div class="mt-16 px-16">
+  <div class="flex flex-col text-primary">
+    <div
+      class="flex flex-col items-center mb-5 laptop:flex-row justify-between"
+    >
+      <h1
+        class="mb-4 font-bold text-xl text-center laptop:text-left laptop:text-2xl flex-auto w-1/2"
+      >
+        My Recent Projects
+      </h1>
+
+      <p class="m-0 laptop:w-1/2 text-sm text-justify text-secondary">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore in fugit
+        accusamus omnis eum suscipit, sit molestiae Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Labore in fugit Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Labore in fugit
+      </p>
+    </div>
+
+    @for (project of projects(); track $index) {
+
+    <home-project [project]="project" [isReversed]="$index % 2 === 0" />
+    }
+  </div>
+</div>

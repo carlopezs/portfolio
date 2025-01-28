@@ -14,17 +14,27 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ProjectsService } from 'app/services/projects.service';
 import { Project } from '@models/project.model';
 import { CommonModule } from '@angular/common';
+import { MenuProjectsMobileComponent } from '@components/projects/projects-menu-mobile/projects-menu-mobile.component';
+import { ProjectsMenuLaptopComponent } from '@components/projects/projects-menu-laptop/projects-menu-laptop.component';
 
 @Component({
   selector: 'app-projects',
-  imports: [MatCardModule, ScrollingModule, CommonModule],
+  imports: [
+    MatCardModule,
+
+    CommonModule,
+    MenuProjectsMobileComponent,
+    ProjectsMenuLaptopComponent,
+
+
+  ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
-export class ProjectsComponent implements OnInit {
+export default class ProjectsComponent implements OnInit {
   private projectService = inject(ProjectsService);
 
-  items = Array.from({length: 100000}).map((_, i) => `Item #${i}`);
+  items = Array.from({ length: 100000 }).map((_, i) => `Item #${i}`);
 
   public projects: WritableSignal<Project[]> = linkedSignal(() =>
     this.projectService.projects()

@@ -10,6 +10,6 @@ import { SoftSkill } from '@models/soft_skill.model';
   imports: [JobComponent],
   templateUrl: './about.component.html',
 })
-export class AboutComponent {
+export default class AboutComponent {
   public softSkills: WritableSignal<SoftSkill[]> = signal([...dataSoftSkill]);
 }

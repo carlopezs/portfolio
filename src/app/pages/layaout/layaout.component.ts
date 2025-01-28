@@ -6,34 +6,36 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {
-  RouterLink,
-  RouterLinkActive,
   RouterOutlet,
 } from '@angular/router';
 import { RouteApp } from '@models/routes.model';
 
+import { MenuMobileComponent } from '@components/general/menu-mobile/menu-mobile.component';
+import { MenuLaptopComponent } from '@components/general/menu-laptop/menu-laptop.component';
+
+
 @Component({
   selector: 'app-layaout',
   imports: [
-    MatToolbarModule,
-    RouterLink,
-    RouterLinkActive,
-    MatIconModule,
-    MatSidenavModule,
-    MatButtonModule,
     RouterOutlet,
-    MatExpansionModule,
-    MatListModule,
-  ],
+    MenuMobileComponent,
+    MenuLaptopComponent,
+
+],
   templateUrl: './layaout.component.html',
   styleUrl: './layaout.component.scss',
+  host:{
+    '(window:resize)':'verifySizeScreen()'
+  }
+
 })
 export class LayaoutComponent {
-  public openSideNav = signal(false);
-
   private windowWith = signal(window.innerWidth);
 
-  public isMobile = computed(() => window.innerWidth <= 500);
+
+
+  public isOpenSideNav = signal(false);
+  public isMobile = computed(() => this.windowWith() <= 1023);
 
   public routes: WritableSignal<RouteApp[]> = signal([
     {
@@ -62,17 +64,10 @@ export class LayaoutComponent {
     console.log(this.routes());
   }
 
-  public toogleSideNav() {
-    this.openSideNav.update((value) => !value);
+  public verifySizeScreen(){
+    this.windowWith.set(window.innerWidth);
   }
 
-  public navigateToOtherSection(route: string) {
-    this.openSideNav.set(false);
-  }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event:any) {
 
-     this.windowWith.set(window.innerWidth);
-  }
 }

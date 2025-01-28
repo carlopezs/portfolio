@@ -1,24 +1,22 @@
-<div class="bg-primary h-screen text-white">
+<div class="bg-primary h-[calc(100vh-81px)] pb-24  text-white laptop:pb-0">
   <div
     class="flex flex-col-reverse laptop:h-full laptop:justify-between laptop:flex-row"
   >
-    <div class="flex flex-col space-y-5 pb-24 px-5 pt-10 border-r laptop:w-1/2">
+    <div class="common-vertical-padding flex flex-col space-y-6 pt-10 border-r laptop:w-1/2">
       <h1 class="text-2xl font-bold">{{ projectToShow().title }}</h1>
 
-      <div class=" laptop:hidden">
+      <div class="laptop:hidden">
         <img class="object-contain" [src]="projectToShow().image" />
       </div>
 
-      <h3 class="text-base">
+      <h3 class="text-base text-justify">
         {{ projectToShow().description }}
       </h3>
 
-
-
-      <div class="flex flex-row space-x-4 flex-grow items-end">
+      <div class="flex grow flex-row space-x-4 pb-7 items-end">
         @for (tool of projectToShow().tools; track $index) {
         <div
-          class="flex flex-row space-x-2 h-11 w-32 justify-start items-center rounded-lg p-2 border-white border cursor-pointer hover:bg-secondary hover:border-secondary"
+          class="flex flex-row space-x-2 h-11  justify-start items-center rounded-lg p-2 border-white border cursor-pointer hover:bg-secondary hover:border-secondary"
         >
           <img class="object-contain w-5" [src]="tool.image" />
           <p>{{ tool.title }}</p>
@@ -27,59 +25,10 @@
       </div>
     </div>
 
-    <div class="flex grow  justify-start h-20 w-full overflow-x-scroll scrollbar-hide overflow-hidden laptop:hidden">
-      @for(project of projects(); track project.id){
-      <div class="flex items-center  justify-between">
-        <div
-          [ngClass]="{
-            'bg-thertiary animate-jump animate-once animate-ease-in-out ': project.id === projectToShow().id
-          }"
-           (click)="chooseProjectToShow(project.id)"
-          class="flex bg-secondary rounded-lg p-2 w-32 h-2/3 text-sm font-bold ml-2"
-        >
-          <h3>
-            {{ project.title }}
-          </h3>
-        </div>
-      </div>
+    <projects-menu-moblie [projects]="projects()" />
 
-      }
-    </div>
+    <projects-menu-laptop [projects]="projects()"   />
 
-    <div class="hidden px-5 flex-grow laptop:flex laptop:w-1/2">
-      <cdk-virtual-scroll-viewport
-        appendOnly
-        itemSize="2"
-        class="w-full h-auto"
-      >
-        <div
-          *cdkVirtualFor="let project of projects()"
-          class="laptop:flex laptop:justify-center"
-        >
-          <div
-            (click)="chooseProjectToShow(project.id)"
-            [ngClass]="{
-              'bg-thertiary animate-shake ': project.id === projectToShow().id
-            }"
-            class="bg-secondary mt-3 p-6 rounded-lg cursor-pointer hover:bg-thertiary laptop:flex laptop:flex-row laptop:w-11/12 laptop:h-40"
-          >
-            <div class="hidden justify-center w-1/2 laptop:flex">
-              <img class="object-contain w-10/12" src="images/delete.png" />
-            </div>
 
-            <div class="flex flex-col laptop:w-1/2">
-              <h1 class="text-sm font-bold laptop:text-lg">
-                {{ project.title }}
-              </h1>
-              <p
-                class="hidden text-sm line-clamp-2 max-w-full w-96 overflow-hidden text-ellipsis laptop:block"
-              >
-                {{ project.description }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </cdk-virtual-scroll-viewport>
-    </div>
   </div>
 </div>

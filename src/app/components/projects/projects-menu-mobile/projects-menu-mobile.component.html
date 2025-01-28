@@ -1,0 +1,15 @@
+@for(project of projects(); track project.id; let idx = $index){
+<div class="flex items-center">
+  <div
+    [class.project-selected]="project.id === projectToShow().id"
+    [ngClass]="{
+      'mr-2 ': idx === projects().length - 1
+    }"
+    (click)="chooseProjectToShow(project.id)"
+    class="flex justify-center items-center bg-secondary rounded-lg p-2 w-32 h-2/3 text-sm font-bold ml-2"
+  >
+    {{ project.title }}
+  </div>
+</div>
+
+}
