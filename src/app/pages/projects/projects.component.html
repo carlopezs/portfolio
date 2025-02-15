@@ -1,34 +1,33 @@
-<div class="bg-primary h-[calc(100vh-81px)] pb-24  text-white laptop:pb-0">
+<div
+  class="bg-primary h-full pb-3 text-white laptop:pb-3 laptop:h-[calc(100vh-81px)]"
+>
   <div
     class="flex flex-col-reverse laptop:h-full laptop:justify-between laptop:flex-row"
   >
-    <div class="common-vertical-padding flex flex-col space-y-6 pt-10 border-r laptop:w-1/2">
-      <h1 class="text-2xl font-bold">{{ projectToShow().title }}</h1>
+    <div
+      class="common-vertical-padding h-screen flex flex-col space-y-6 pt-10 border-r laptop:h-full laptop:w-1/2"
+    >
+      <div class="space-y-6 laptop:h-5/6">
+        <h1 class="text-2xl font-bold">{{ projectToShow().title }}</h1>
 
-      <div class="laptop:hidden">
-        <img class="object-contain" [src]="projectToShow().image" />
+        <div class="laptop:hidden">
+          <img class="object-contain" [src]="projectToShow().image" />
+        </div>
+
+        <h3 class="text-base text-justify">
+          {{ projectToShow().description }}
+        </h3>
       </div>
 
-      <h3 class="text-base text-justify">
-        {{ projectToShow().description }}
-      </h3>
-
-      <div class="flex grow flex-row space-x-4 pb-7 items-end">
+      <div class="flex flex-row items-stretch flex-wrap gap-4">
         @for (tool of projectToShow().tools; track $index) {
-        <div
-          class="flex flex-row space-x-2 h-11  justify-start items-center rounded-lg p-2 border-white border cursor-pointer hover:bg-secondary hover:border-secondary"
-        >
-          <img class="object-contain w-5" [src]="tool.image" />
-          <p>{{ tool.title }}</p>
-        </div>
+          <projects-tool-chip [tool]="tool" />
         }
       </div>
     </div>
 
     <projects-menu-moblie [projects]="projects()" />
 
-    <projects-menu-laptop [projects]="projects()"   />
-
-
+    <projects-menu-laptop [projects]="projects()" />
   </div>
 </div>

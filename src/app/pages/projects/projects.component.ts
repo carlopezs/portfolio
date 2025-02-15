@@ -16,17 +16,16 @@ import { Project } from '@models/project.model';
 import { CommonModule } from '@angular/common';
 import { MenuProjectsMobileComponent } from '@components/projects/projects-menu-mobile/projects-menu-mobile.component';
 import { ProjectsMenuLaptopComponent } from '@components/projects/projects-menu-laptop/projects-menu-laptop.component';
+import { ToolChipComponent } from '@components/projects/tool-chip/tool-chip.component';
 
 @Component({
   selector: 'app-projects',
   imports: [
     MatCardModule,
-
     CommonModule,
     MenuProjectsMobileComponent,
     ProjectsMenuLaptopComponent,
-
-
+    ToolChipComponent
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',

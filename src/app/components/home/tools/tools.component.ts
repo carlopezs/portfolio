@@ -1,3 +1,4 @@
+import { ToolHomeComponent } from '@components/home/tools/tool-home/tool-home.component';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -10,7 +11,7 @@ import { tools as dataTools } from '@data/tools';
 
 @Component({
   selector: 'home-tools',
-  imports: [],
+  imports: [ToolHomeComponent],
   templateUrl: './tools.component.html',
   styleUrl: './tools.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

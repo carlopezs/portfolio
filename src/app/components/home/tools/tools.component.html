@@ -1,4 +1,4 @@
-<div class="text-justify px-16">
+<div class="text-justify common-vertical-padding">
 
 
   <div class="flex flex-col w-auto h-auto mt-16">
@@ -25,17 +25,8 @@
       class="grid justify-items-center gap-y-5 grid-cols-3 mt-2 laptop:grid-cols-6 laptop:gap-x-10"
     >
       @for (tool of tools(); track $index) {
-      <div
-        class="flex flex-col items-center cursor-pointer justify-center space-y-3 hover:scale-110"
-      >
-        <div
-          class="flex items-center justify-center w-24 h-24 rounded-md bg-gray-100 hover:bg-secondary"
-        >
-          <img [src]="tool.image" class="w-11" />
-        </div>
 
-        <div class="text-sm">{{ tool.title }}</div>
-      </div>
+        <home-tool [tool]="tool"/>
 
       }
     </div>
