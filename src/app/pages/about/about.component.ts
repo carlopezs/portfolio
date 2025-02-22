@@ -1,9 +1,9 @@
 
 import { Component, signal, WritableSignal } from '@angular/core';
 import { JobComponent } from '@components/about/job/job.component';
-import { softSkills as dataSoftSkill } from '@data/soft_skills';
+import { softSkills as dataSoftSkill } from '@data/soft-skills';
 
-import { SoftSkill } from '@models/soft_skill.model';
+import { SoftSkill } from '@models/soft-skill.model';
 
 @Component({
   selector: 'app-about',

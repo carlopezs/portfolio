@@ -1,5 +1,14 @@
 <div class="flex flex-col items-center space-y-3 laptop:items-start">
-  <div class="w-16 h-16 rounded-full bg-secondary"></div>
+  <div
+    class="flex justify-center items-center w-16 h-16 rounded-full bg-secondary"
+  >
+    <mat-icon
+      aria-hidden="false"
+      [ngStyle]="{'color': 'white'}"
+      aria-label="Example home icon"
+      [fontIcon]="softSkill().icon"
+    ></mat-icon>
+  </div>
 
   <p class="font-bold text-lg">{{ softSkill().title }}</p>
 

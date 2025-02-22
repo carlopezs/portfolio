@@ -21,22 +21,25 @@
     <ul
       class="flex flex-col p-8 space-y-8 items-start bg-primary text-white h-full"
     >
-      @for (item of routes(); track $index) {
+
+
+      @for (route of routes(); track $index) {
 
       <mat-nav-list
         class="cursor-pointer"
-        (click)="navigateToOtherSection(item.route)"
-        [routerLink]="[item.route]"
-        routerLinkActive="underline decoration-2 underline-offset-8"
-        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="navigateToOtherSection(route.route)"
+        [routerLink]="[route.route]"
+        [class.common-style-navbar]="activateRoute().includes(route.title)"
+
+
       >
         <div class="flex space-x-2">
           <mat-icon
             aria-hidden="false"
             aria-label="Home"
-            [fontIcon]="item.icon"
+            [fontIcon]="route.icon"
           ></mat-icon>
-          <div>{{ item.name }}</div>
+          <div>{{ route.name }}</div>
         </div>
       </mat-nav-list>
 

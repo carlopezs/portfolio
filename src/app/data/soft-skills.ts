@@ -1,44 +1,44 @@
-import { SoftSkill } from "@models/soft_skill.model";
+import { SoftSkill } from "@models/soft-skill.model";
 
 export const softSkills: SoftSkill[] = [
   {
     title: "Empathy",
-    icon: "🤝",
+    icon: "diversity_1",
     description: "The ability to understand and share the feelings of others, fostering stronger relationships."
   },
   {
     title: "Critical Thinking",
-    icon: "🧠",
+    icon: "psychology",
     description: "Analyzing situations objectively to make informed decisions and solve complex problems."
   },
   {
     title: "Time Management",
-    icon: "⏰",
+    icon: "schedule",
     description: "Effectively managing your time to maximize productivity and meet deadlines."
   },
   {
     title: "Adaptability",
-    icon: "🔄",
+    icon: "autorenew",
     description: "Being able to adjust to new conditions and embrace change with a positive mindset."
   },
   {
     title: "Conflict Resolution",
-    icon: "⚖️",
+    icon: "balance",
     description: "Handling disagreements constructively to reach mutual agreements and maintain harmony."
   },
   {
     title: "Teamwork",
-    icon: "👥",
+    icon: "groups",
     description: "Collaborating effectively with others to achieve common goals."
   },
   {
     title: "Communication",
-    icon: "💬",
+    icon: "connect_without_contact",
     description: "Conveying ideas clearly and listening actively to foster mutual understanding."
   },
   {
     title: "Creativity",
-    icon: "🎨",
+    icon: "palette",
     description: "Thinking outside the box to find innovative solutions and improve processes."
   },
 

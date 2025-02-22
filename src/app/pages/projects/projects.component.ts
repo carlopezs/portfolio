@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 import { MenuProjectsMobileComponent } from '@components/projects/projects-menu-mobile/projects-menu-mobile.component';
 import { ProjectsMenuLaptopComponent } from '@components/projects/projects-menu-laptop/projects-menu-laptop.component';
 import { ToolChipComponent } from '@components/projects/tool-chip/tool-chip.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-projects',
@@ -25,15 +26,15 @@ import { ToolChipComponent } from '@components/projects/tool-chip/tool-chip.comp
     CommonModule,
     MenuProjectsMobileComponent,
     ProjectsMenuLaptopComponent,
-    ToolChipComponent
+    ToolChipComponent,
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
 export default class ProjectsComponent implements OnInit {
   private projectService = inject(ProjectsService);
-
-  items = Array.from({ length: 100000 }).map((_, i) => `Item #${i}`);
+  private activatedRoute = inject(ActivatedRoute);
+  private router = inject(Router);
 
   public projects: WritableSignal<Project[]> = linkedSignal(() =>
     this.projectService.projects()
@@ -45,9 +46,9 @@ export default class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.projectService.loadProjects();
-  }
-
-  public chooseProjectToShow(projectID: number) {
-    this.projectService.chooseProjectToShow(projectID);
+    this.activatedRoute.params.subscribe((value) => {
+      if (value['title'] == 'all') return;
+      this.projectService.chooseProjectToShowByTitle(value['title']);
+    });
   }
 }

@@ -5,7 +5,7 @@
     [ngClass]="{
       'mr-2 ': idx === projects().length - 1
     }"
-    (click)="chooseProjectToShow(project.id)"
+    (click)="chooseProjectToShow(project.title)"
     class="flex justify-center items-center bg-secondary rounded-lg p-2 w-32 h-2/3 text-sm font-bold ml-2"
   >
     {{ project.title }}

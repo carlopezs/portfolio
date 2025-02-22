@@ -14,14 +14,20 @@ export class ProjectsService {
 
   constructor() {}
 
-  public loadProjects() {
-    setTimeout(() => {
+  public async loadProjects() {
+
       this._projects.set([...dataProjects]);
-    }, 0);
+
   }
 
   public chooseProjectToShow(projectId:number){
     const projectToShow = this._projects().find((project)=> project.id === projectId);
+    if (!projectToShow) return;
+    this._projectToShow.set(projectToShow)
+  }
+
+  public chooseProjectToShowByTitle(title:string){
+    const projectToShow = this._projects().find((project)=> project.title == title);
     if (!projectToShow) return;
     this._projectToShow.set(projectToShow)
   }

@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, signal, WritableSignal } from '@ang
 import { Project } from '@models/project.model';
 import { projects as dataProjects } from '@data/projects';
 import { ProjectComponent } from './project/project.component';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'home-recent-projects',
   imports: [ProjectComponent],

@@ -22,8 +22,10 @@
   <hr />
 
   <div class="flex flex-row space-x-8 mt-3">
-    <a class="cursor-pointer hover:underline">Linkedin</a>
-    <a class="cursor-pointer hover:underline">GitHub</a>
-    <a class="cursor-pointer hover:underline">Instagram</a>
+    @for (socialNetwork of socialNetworks(); track $index) {
+      <a [href]="socialNetwork.url" target="_blank" class="cursor-pointer hover:underline">{{socialNetwork.title}}</a>
+
+    }
+
   </div>
 </div>

@@ -1,10 +1,16 @@
-<cdk-virtual-scroll-viewport appendOnly itemSize="2" class="w-full h-auto">
+<cdk-virtual-scroll-viewport
+
+
+
+  itemSize="5"
+  minBufferPx="200" maxBufferPx="400"
+  class="w-full h-auto">
   <div
     *cdkVirtualFor="let project of projects()"
     class="laptop:flex laptop:justify-center"
   >
     <div
-      (click)="chooseProjectToShow(project.id)"
+      (click)="chooseProjectToShowByTitle(project.title)"
       [ngClass]="{
         'bg-thertiary animate-shake ': project.id === projectToShow().id
       }"
@@ -19,7 +25,7 @@
           {{ project.title }}
         </h1>
         <p
-          class="hidden text-sm line-clamp-2 max-w-full w-96 overflow-hidden text-ellipsis laptop:block"
+          class="text-sm  max-w-full w-96 line-clamp-4"
         >
           {{ project.description }}
         </p>

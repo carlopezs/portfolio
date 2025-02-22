@@ -12,11 +12,12 @@ export const routes: Routes = [
     loadComponent:() => import('./pages/about/about.component')
   },
   {
-    path:'projects',
+    path:'projects/:title',
     loadComponent:() => import('./pages/projects/projects.component')
   },
   {
     path:'certificates',
+
     loadComponent:() => import('./pages/certificates/certificates.component')
   },
 

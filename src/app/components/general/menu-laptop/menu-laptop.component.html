@@ -1,19 +1,20 @@
 
+
+
   <div>
     <ul
       class="flex flex-row justify-between p-8 items-center bg-primary text-white h-20"
     >
       <div class="flex space-x-9">
         <li class="cursor-pointer font-bold text-xl">C.</li>
-        @for (item of routes(); track $index) {
+        @for (route of routes(); track $index) {
 
         <li
           class="cursor-pointer"
-          [routerLink]="[item.route]"
-          routerLinkActive="underline decoration-2 underline-offset-8"
-          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="navigateToOtherPage(route.route)"
+          [class.common-style-navbar]="activateRoute().includes(route.title) "
         >
-          {{ item.name }}
+          {{ route.name }}
         </li>
         }
       </div>

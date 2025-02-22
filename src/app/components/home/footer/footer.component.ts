@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { SocialNetWork } from '@models/social-network.model';
+import { SocialNetworkService } from 'app/services/social-network.service';
 
 @Component({
   selector: 'home-footer',
@@ -7,4 +9,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './footer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FooterComponent { }
+export class FooterComponent {
+
+  private socialNetworksService = inject(SocialNetworkService);
+
+    public socialNetworks = computed<SocialNetWork[]> (()=> this.socialNetworksService.socialNetworks());
+}

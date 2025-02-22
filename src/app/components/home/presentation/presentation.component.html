@@ -2,46 +2,30 @@
   class="flex flex-row w-auto h-auto items-center justify-center space-y-6 bg-primary text-white"
 >
   <div
-    class="flex flex-col items-center laptop:items-start justify-center phone:text-center laptop:text-left laptop:pr-96 laptop:ml-12 space-y-5"
+    class="flex flex-col items-center laptop:items-start justify-center phone:text-center laptop:text-left laptop:pr-80 laptop:ml-8 space-y-5"
   >
-    <h1 class= " animate-fade-right mt-4 text-xl">Hi, I'm Carlos</h1>
+    <h1 class="animate-fade-right mt-4 text-xl">Hi, I'm Carlos</h1>
 
     <img
-      class=" animate-fade-up  object-scale-down laptop:hidden bg-secondary rounded-full w-40 h-40"
+      class="animate-fade-up object-scale-down laptop:hidden bg-secondary rounded-full w-40 h-40"
       src="images/me2.png"
     />
 
-    <h1 class=" animate-fade-right  text-3xl font-bold">Fullstack Developer</h1>
+    <h1 class="animate-fade-right text-3xl font-bold">Fullstack Developer</h1>
 
-    <h3 class=" animate-fade-right  text-lg hidden laptop:block">
+    <h3 class="animate-fade-right text-lg hidden laptop:block">
       Software Engineer with expertise in full-stack development, creating
       innovative solutions using Angular, Java Spring Boot, Dart, and Flutter.
     </h3>
 
     <div class="pb-7 flex space-x-10">
-      <button
-        type="button"
-        class="animate-fade-right   border py-2 px-4 rounded text-center hover:bg-secondary hover:border-secondary"
-      >
-        <div class="flex items-center space-x-2">
-          <img src="images/github.png" class="w-8" />
-          <span>GitHub</span>
-        </div>
-      </button>
-
-      <button
-        type="button"
-        class="  animate-fade-right  border py-2 px-4 rounded text-center hover:bg-secondary hover:border-secondary"
-      >
-        <div class=" flex items-center space-x-2">
-          <img src="images/linkedin.png" class="w-8" />
-          <span>Linkedin</span>
-        </div>
-      </button>
+      @for ( socialNetwork of socialNetworks(); track $index) {
+      <presentation-button [socialNetwork]="socialNetwork" />
+      }
     </div>
   </div>
 
-  <div class=" animate-fade-up relative mr-26 py-10 mr-20 hidden laptop:block">
+  <div class="animate-fade-up relative  py-10 mr-9 hidden laptop:block">
     <div class="w-[16rem] h-[21rem] border border-white relative rounded">
       <img
         src="images/me2.png"

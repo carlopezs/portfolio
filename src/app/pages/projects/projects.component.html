@@ -1,4 +1,6 @@
-<div
+
+@if(projectToShow()){
+  <div
   class="bg-primary h-full pb-3 text-white laptop:pb-3 laptop:h-[calc(100vh-81px)]"
 >
   <div
@@ -31,3 +33,5 @@
     <projects-menu-laptop [projects]="projects()" />
   </div>
 </div>
+
+}

@@ -1,7 +1,11 @@
+import { Location } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
+  inject,
   input,
+  linkedSignal,
   signal,
 } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,7 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { RouteApp } from '@models/routes.model';
 
 @Component({
@@ -19,7 +23,6 @@ import { RouteApp } from '@models/routes.model';
   imports: [
     MatToolbarModule,
     RouterLink,
-    RouterLinkActive,
     MatIconModule,
     MatSidenavModule,
     MatButtonModule,
@@ -35,14 +38,23 @@ import { RouteApp } from '@models/routes.model';
     `,
 })
 export class MenuMobileComponent {
+  private location = inject(Location);
+
   public isOpenSideNav = signal(false);
   public routes = input.required<RouteApp[]>();
+  public actualRoute = linkedSignal(() => this.location.path());
+  public activateRoute = computed(() =>
+    this.actualRoute().split('/')[1] == ''
+      ? 'home'
+      : this.actualRoute().split('/')[1]
+  );
 
   public toogleSideNav() {
     this.isOpenSideNav.update((value) => !value);
   }
 
   public navigateToOtherSection(route: string) {
+    this.actualRoute.set(route)
     this.isOpenSideNav.set(false);
   }
 }
