@@ -8,33 +8,36 @@
       <h2 class="text-xl">Software Developer</h2>
 
       <p class="text-sm text-justify">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae esse nihil
-        a maiores ullam neque sapiente, sit maxime iusto debitis eum unde
-        repellat, veniam, quod saepe vero incidunt quo tenetur. Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Excepturi explicabo labore
-        voluptatum autem? Dolorem placeat ullam perferendis officiis, itaque
-        molestiae nisi beatae eligendi qui quisquam, obcaecati vero eaque, odio
-        unde. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Quasicupiditate doloremque corporis facilis exercitationem, repellendus
-        aliquid, quo
+        I am a passionate software developer with a strong foundation in
+        problem-solving and innovation. My ability to think critically and
+        manage time effectively allows me to build efficient solutions while
+        meeting deadlines. I thrive in team environments, fostering open
+        communication and collaboration to achieve common goals. With a mindset
+        focused on adaptability and creativity, I embrace challenges as
+        opportunities to grow and innovate. My empathy and conflict resolution
+        skills enable me to work well with diverse teams, ensuring a positive
+        and productive work environment.
       </p>
 
       <button
         type="button"
         class="border w-36 py-2 px-4 rounded text-center hover:bg-secondary hover:border-secondary"
       >
-        <div class="flex justify-center items-center space-x-2">
+        <a
+        href="https://wa.me/593969598740?text=Hola%20estoy%20interesado%20en%20tus%20servicios"
+        target="_blank"
+        class="flex justify-center items-center space-x-2">
           <span class="text-sm">Hire Me</span>
-        </div>
+        </a>
       </button>
     </div>
 
-    <div class="hidden w-64 h-auto  laptop:flex laptop:justify-center rounded-lg bg-secondary">
-
-
+    <div
+      class="hidden w-64 h-auto laptop:flex laptop:justify-center rounded-lg bg-secondary"
+    >
       <img
         class="object-contain h-80 relative left-6 rounded-r-lg"
-        src="images/mecoffe.jpg"
+        src="images/me/mecoffe.jpg"
       />
     </div>
   </div>
@@ -49,14 +52,15 @@
     </h1>
 
     <p class="text-sm">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo enim
-      esse, molestiae porro assumenda itaque provident maiores cumque optio sint
-      id hic aut non ad repudiandae cum ducimus! Saepe, nulla?
+      I excel in teamwork, adaptability, and problem-solving, ensuring smooth
+      collaboration in dynamic environments. Strong communication and critical
+      thinking allow me to tackle challenges effectively while maintaining a
+      growth mindset.
     </p>
   </div>
 
   <div class="flex flex-col">
-    <div class="grid  gap-10 text-justify laptop:grid-cols-4">
+    <div class="grid gap-10 text-justify laptop:grid-cols-4">
       @for (softSkill of softSkills(); track $index) {
       <about-job [softSkill]="softSkill" />
 

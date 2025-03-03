@@ -1,68 +1,67 @@
-import { Certificate } from '@models/certificate.model';
+import { Certificate } from "@models/certificate.model";
 
 export const certificates: Certificate[] = [
   {
-    courseTitle: 'Docker - Guía práctica de uso para desarrolladores',
-    certificateHolder: 'Carlos Lopez',
-    instructor: 'Fernando Herrera',
+    courseTitle: 'Complete Guide to MongoDB',
+    instructor: 'Cristian Donayre',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. At accusamus voluptate nihil, ad, exercitationem, sapiente quae aut numquam optio soluta tempora fugiat omnis quaerat ipsa porro perferendis reiciendis velit fugit!',
-    image: 'images/certificado.jpg',
+      'Learn how to design, manage, and optimize NoSQL databases with MongoDB. This course covers CRUD operations, indexing, aggregation, and best practices for data modeling.',
+    image: 'images/certificates/bdd/mongo.jpg',
   },
   {
-    courseTitle: 'Introducción a Flutter y Dart',
-    certificateHolder: 'Ana Martinez',
+    courseTitle: 'Angular: From Zero to Expert',
     instructor: 'Fernando Herrera',
     description:
-      'Aprende a desarrollar aplicaciones móviles multiplataforma usando Flutter y el lenguaje Dart. Con este curso estarás listo para crear proyectos profesionales.',
-    image: 'images/certificado.jpg',
+      'Master Angular from the basics to advanced concepts. Learn how to build scalable and dynamic web applications using components, services, RxJS, and state management.',
+    image: 'images/certificates/angular/angular_cero_experto.jpg',
   },
   {
-    courseTitle: 'React - Desarrollo de Aplicaciones Modernas',
-    certificateHolder: 'Luis Perez',
-    instructor: 'Fernando Herrera',
+    courseTitle: 'Layout with Angular CDK and Tailwind',
+    instructor: 'Nicolas Molina',
     description:
-      'Domina los fundamentos y el ecosistema de React para crear aplicaciones web modernas, dinámicas y eficientes desde cero.',
-    image: 'images/certificado.jpg',
+      'Learn how to create efficient and responsive UI layouts using Angular CDK and Tailwind CSS. This course focuses on component customization, styling, and performance optimization.',
+    image: 'images/certificates/angular/angular_tailwind.jpg',
   },
   {
-    courseTitle: 'JavaScript - Guía Completa para Desarrolladores',
-    certificateHolder: 'Claudia Gomez',
-    instructor: 'Fernando Herrera',
+    courseTitle: 'Technical Test: Frontend Development with Angular',
+    instructor: 'Nicolas Molina',
     description:
-      'Este curso te llevará desde los fundamentos básicos hasta conceptos avanzados de JavaScript, ayudándote a convertirte en un desarrollador full-stack.',
-    image: 'images/certificado.jpg',
+      'Successfully completed a technical test focused on Angular development, demonstrating proficiency in component-based architecture, state management, and application performance optimization.',
+    image: 'images/certificates/angular/prueba_angular.jpg',
   },
   {
-    courseTitle: 'Angular - Desarrollo de Aplicaciones Empresariales',
-    certificateHolder: 'Carlos Lopez',
+    courseTitle: 'SOLID Principles and Clean Code',
     instructor: 'Fernando Herrera',
     description:
-      'Descubre cómo crear aplicaciones empresariales escalables utilizando Angular, uno de los frameworks más populares para el desarrollo frontend.',
-    image: 'images/certificado.jpg',
+      'Learn and apply SOLID principles to write maintainable, scalable, and efficient code. This course emphasizes clean coding practices and best design patterns.',
+    image: 'images/certificates/other/principios_solid.jpg',
   },
   {
-    courseTitle: 'Node.js - Construyendo APIs con Express',
-    certificateHolder: 'Daniel Ramirez',
+    courseTitle: 'Intermediate Level Flutter',
     instructor: 'Fernando Herrera',
     description:
-      'Aprende a construir servidores y APIs RESTful utilizando Node.js y Express, cubriendo todo desde la autenticación hasta el manejo de bases de datos.',
-    image: 'images/certificado.jpg',
+      'Enhance Flutter development skills by learning advanced UI components, state management techniques, animations, and API integration to build high-performance mobile applications.',
+    image: 'images/certificates/flutter/flutter_nivel_intermedio.jpg',
   },
   {
-    courseTitle: 'Python - Introducción a la Programación',
-    certificateHolder: 'Maria Sanchez',
+    courseTitle: 'Flutter: From Zero to Expert',
     instructor: 'Fernando Herrera',
     description:
-      'Un curso para principiantes donde aprenderás las bases de la programación utilizando Python, uno de los lenguajes más demandados del mercado.',
-    image: 'images/certificado.jpg',
+      'Master Flutter and Dart from the basics to advanced concepts. Build cross-platform mobile applications with custom widgets, animations, and backend integration.',
+    image: 'images/certificates/flutter/flutter.jpg',
   },
   {
-    courseTitle: 'SQL - Dominando las Bases de Datos',
-    certificateHolder: 'Jorge Ruiz',
-    instructor: 'Fernando Herrera',
+    courseTitle: 'TypeScript Fundamentals',
+    instructor: 'Nicolas Molina',
     description:
-      'Domina el lenguaje SQL y aprende a manejar bases de datos relacionales, creando consultas avanzadas y optimizando tus proyectos.',
-    image: 'images/certificado.jpg',
+      'Understand TypeScript’s core features, including types, interfaces, generics, and advanced object-oriented programming concepts. Learn how to improve JavaScript code with strong typing and scalability.',
+    image: 'images/certificates/angular/typescript.jpg',
+  },
+  {
+    courseTitle: 'Asynchrony with JavaScript',
+    instructor: 'Platzi',
+    description:
+      'Master asynchronous programming in JavaScript, covering callbacks, promises, and async/await. Learn best practices to handle API requests, event loops, and concurrency efficiently.',
+    image: 'images/certificates/javascript/asincronismo_js.jpg',
   },
 ];

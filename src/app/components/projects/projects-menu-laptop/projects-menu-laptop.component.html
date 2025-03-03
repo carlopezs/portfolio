@@ -14,13 +14,13 @@
       [ngClass]="{
         'bg-thertiary animate-shake ': project.id === projectToShow().id
       }"
-      class="bg-secondary mt-3 p-6 rounded-lg cursor-pointer hover:bg-thertiary laptop:flex laptop:flex-row laptop:w-11/12 laptop:h-40"
+      class="bg-secondary mt-3  rounded-lg cursor-pointer hover:bg-thertiary laptop:flex laptop:flex-row laptop:w-11/12 laptop:h-44"
     >
       <div class="hidden justify-center w-1/2 laptop:flex">
-        <img class="object-contain w-10/12" src="images/delete.png" />
+        <img class="object-cover" [src]="project.image" />
       </div>
 
-      <div class="flex flex-col laptop:w-1/2">
+      <div class="flex flex-col p-3 laptop:w-1/2">
         <h1 class="text-sm font-bold laptop:text-lg">
           {{ project.title }}
         </h1>

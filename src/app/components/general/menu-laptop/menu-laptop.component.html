@@ -1,36 +1,38 @@
+<div>
+  <ul
+    class="flex flex-row justify-between p-8 items-center bg-primary text-white h-20"
+  >
+    <div class="flex space-x-9">
+      <li class="cursor-pointer font-bold text-xl">C.</li>
+      @for (route of routes(); track $index) {
 
-
-
-  <div>
-    <ul
-      class="flex flex-row justify-between p-8 items-center bg-primary text-white h-20"
-    >
-      <div class="flex space-x-9">
-        <li class="cursor-pointer font-bold text-xl">C.</li>
-        @for (route of routes(); track $index) {
-
-        <li
-          class="cursor-pointer"
-          (click)="navigateToOtherPage(route.route)"
-          [class.common-style-navbar]="activateRoute().includes(route.title) "
-        >
-          {{ route.name }}
-        </li>
-        }
-      </div>
-
-      <li class="ml-auto flex cursor-pointer">
-        <mat-icon
-          aria-hidden="false"
-          aria-label="Example home icon"
-          fontIcon="download_2"
-        ></mat-icon>
-        Download CV
+      <li
+        class="cursor-pointer"
+        (click)="navigateToOtherPage(route.route)"
+        [ngClass]="{
+          'common-style-navbar': activateRoute()?.includes(route.title)
+        }"
+      >
+        {{ route.name }}
       </li>
-    </ul>
-  </div>
+      }
+    </div>
 
-  <hr />
+    <li class="ml-auto flex cursor-pointer">
+      <button class="flex text-white" [matMenuTriggerFor]="menu">
+        <mat-icon fontIcon="download_2"></mat-icon>
+        <div>Download CV</div>
+      </button>
 
+      <mat-menu #menu>
+        <a mat-menu-item href="cv/curriculum_english.pdf" download="carlos-lopez-english.pdf"> English </a>
+
+        <a mat-menu-item href="cv/curriculum.pdf" download="carlos-lopez-spanish.pdf"> Spanish </a>
+      </mat-menu>
+    </li>
+  </ul>
+</div>
+
+<hr />
 
 <ng-content> </ng-content>

@@ -1,20 +1,17 @@
-<div class="flex flex-col space-y-2 rounded-md pb-6  bg-primary text-white laptop:pb-3">
-  <div class="h-1/6">
-    <img
-    class="object-fill rounded-t-md"
-    [src]="certificate().image"
-
-  />
+<div
+  class="flex flex-col space-y-2 rounded-md pb-6 bg-primary  text-white laptop:pb-3"
+>
+  <div class="h-64 ">
+    <img class="h-full w-full object-cover" [src]="certificate().image" />
   </div>
 
-  <div class="flex flex-col  space-y-3 px-5">
-    <h3 class="font-bold line-clamp-1">{{certificate().courseTitle}}</h3>
+  <div class="flex flex-col space-y-3 px-5">
+    <h3 class="font-bold line-clamp-1">{{ certificate().courseTitle }}</h3>
 
-    <div class="text-sm h-24 text-ellipsis ">
-      <p class=" line-clamp-4">
-        {{certificate().description}}
+    <div class="text-sm h-24 text-ellipsis">
+      <p class="line-clamp-4">
+        {{ certificate().description }}
       </p>
-
     </div>
 
     <button

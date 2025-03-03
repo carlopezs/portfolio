@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   computed,
   HostListener,
@@ -27,6 +28,7 @@ import { Location } from '@angular/common';
   host: {
     '(window:resize)': 'verifySizeScreen()',
   },
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class LayaoutComponent {
 

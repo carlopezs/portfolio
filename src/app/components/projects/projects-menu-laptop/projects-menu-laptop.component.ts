@@ -25,7 +25,7 @@ import { ProjectsService } from 'app/services/projects.service';
   styleUrl: './projects-menu-laptop.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'hidden px-5 flex-grow laptop:flex laptop:w-1/2',
+    class: 'hidden px-5 flex-grow mb-2 laptop:flex laptop:w-1/2',
   },
 })
 export class ProjectsMenuLaptopComponent implements OnInit, AfterViewInit {
@@ -46,9 +46,6 @@ export class ProjectsMenuLaptopComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
 
       const scrollOffset = this.virtualScroll()?.measureScrollOffset('bottom')! + this.virtualScroll()!.getDataLength() * 70;
-
-      console.log(scrollOffset);
-      console.log(scrollOffset / this.virtualScroll()!.getDataLength() );
 
       this.virtualScroll()?.scrollToOffset(
         index *

@@ -1,18 +1,25 @@
 <div
-  class="flex flex-row justify-between p-3 items-center bg-primary text-white h-20 "
+  class="flex flex-row justify-between p-3 items-center bg-primary text-white h-20"
 >
   <button mat-icon-button (click)="toogleSideNav()">
     <mat-icon class="text-white">menu</mat-icon>
   </button>
 
   <div class="flex space-x-2">
-    <mat-icon
-      aria-hidden="false"
-      aria-label="Example home icon"
-      fontIcon="download_2"
-    ></mat-icon>
 
-    <h1 class="text-center">Download CV</h1>
+
+    <li class="ml-auto flex cursor-pointer">
+      <button class="flex text-white" [matMenuTriggerFor]="menu">
+        <mat-icon fontIcon="download_2"></mat-icon>
+        <div>Download CV</div>
+      </button>
+
+      <mat-menu #menu>
+        <a mat-menu-item href="cv/curriculum_english.pdf" download="carlos-lopez-english.pdf"> English </a>
+
+        <a mat-menu-item href="cv/curriculum.pdf" download="carlos-lopez-spanish.pdf"> Spanish </a>
+      </mat-menu>
+    </li>
   </div>
 </div>
 
@@ -21,17 +28,13 @@
     <ul
       class="flex flex-col p-8 space-y-8 items-start bg-primary text-white h-full"
     >
-
-
       @for (route of routes(); track $index) {
 
       <mat-nav-list
         class="cursor-pointer"
         (click)="navigateToOtherSection(route.route)"
         [routerLink]="[route.route]"
-        [class.common-style-navbar]="activateRoute().includes(route.title)"
-
-
+        [class.common-style-navbar]="activateRoute()?.includes(route.title)"
       >
         <div class="flex space-x-2">
           <mat-icon
@@ -47,8 +50,6 @@
     </ul>
   </mat-sidenav>
   <mat-sidenav-content>
-
     <ng-content> </ng-content>
-
   </mat-sidenav-content>
 </mat-sidenav-container>
