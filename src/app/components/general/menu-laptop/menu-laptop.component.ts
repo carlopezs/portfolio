@@ -44,9 +44,7 @@ export class MenuLaptopComponent implements OnInit {
     const principalPath =
       routePaths.length >= 3 ? routePaths[1] : routePaths[0];
 
-    console.log(routePaths);
 
-    console.log(principalPath);
 
     return principalPath == undefined || principalPath == 'portfolio'
       ? 'home'
