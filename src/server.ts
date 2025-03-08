@@ -1,19 +1,16 @@
-import { getContext } from '@netlify/angular-runtime/context';
 import { APP_BASE_HREF } from '@angular/common';
-import { isMainModule } from '@angular/ssr/node';
-import { AngularAppEngine } from '@angular/ssr';
+import { CommonEngine, isMainModule } from '@angular/ssr/node';
 import express from 'express';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import bootstrap from './main.server';
-import { render } from '@netlify/angular-runtime/common-engine'
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
 const indexHtml = join(serverDistFolder, 'index.server.html');
 
 const app = express();
-const angularAppEngine = new AngularAppEngine();
+const commonEngine = new CommonEngine();
 
 /**
  * Example Express Rest API endpoints can be defined here.
@@ -45,28 +42,27 @@ app.get(
   }),
 );
 
+/**
+ * Handle all other requests by rendering the Angular application.
+ */
+app.get('**', (req, res, next) => {
+  const { protocol, originalUrl, baseUrl, headers } = req;
 
-export async function handler(event: any, context: any): Promise<any> {
-  const request = new Request(event.rawUrl, {
-    method: event.httpMethod,
-    headers: event.headers,
-    body: event.body,
-  });
+  console.log(baseUrl);
 
-  const result = await angularAppEngine.handle(request, getContext());
-  if (result) {
-    return {
-      statusCode: result.status,
-      headers: Object.fromEntries(result.headers.entries()),
-      body: await result.text(),
-    };
-  } else {
-    return {
-      statusCode: 404,
-      body: 'Not found',
-    };
-  }
-}
+  commonEngine
+    .render({
+      bootstrap,
+      documentFilePath: indexHtml,
+      url: `${protocol}://${headers.host}${originalUrl}`,
+      publicPath: browserDistFolder,
+      providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
+    })
+    .then((html) => res.send(html))
+    .catch((err) => next(err));
+});
+
+
 
 /**
  * Start the server if this module is the main entry point.
