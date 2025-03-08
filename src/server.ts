@@ -1,16 +1,17 @@
-import { AngularAppEngine, createRequestHandler } from '@angular/ssr';
+import { APP_BASE_HREF } from '@angular/common';
+import { CommonEngine, isMainModule } from '@angular/ssr/node';
 import express from 'express';
-import { dirname, resolve } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { isMainModule } from '@angular/ssr/node';
+import bootstrap from './main.server';
+import { render } from '@netlify/angular-runtime/common-engine'
+
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
+const indexHtml = join(serverDistFolder, 'index.server.html');
 
 const app = express();
-
-const angularAppEngine = new AngularAppEngine();
-import { getContext } from '@netlify/angular-runtime/context';
-
+const commonEngine = new CommonEngine();
 
 /**
  * Example Express Rest API endpoints can be defined here.
@@ -24,16 +25,47 @@ import { getContext } from '@netlify/angular-runtime/context';
  * ```
  */
 
+app.use((req, res, next) => {
+  console.log(`📄 Sirviendo archivo estático: ${req.path}`);
+  next();
+});
+
+
+
 /**
  * Serve static files from /browser
  */
-app.use(
+app.get(
+  '**',
   express.static(browserDistFolder, {
     maxAge: '1y',
-    index: false,
-    redirect: false,
-  })
+    index: 'index.html'
+  }),
 );
+
+/**
+ * Handle all other requests by rendering the Angular application.
+ */
+app.get('**', (req, res, next) => {
+  const { protocol, originalUrl, baseUrl, headers } = req;
+
+  console.log(baseUrl);
+
+  commonEngine
+    .render({
+      bootstrap,
+      documentFilePath: indexHtml,
+      url: `${protocol}://${headers.host}${originalUrl}`,
+      publicPath: browserDistFolder,
+      providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
+    })
+    .then((html) => res.send(html))
+    .catch((err) => next(err));
+});
+
+export async function netlifyCommonEngineHandler(request: Request, context: any): Promise<Response> {
+  return await render(commonEngine)
+}
 
 /**
  * Start the server if this module is the main entry point.
@@ -45,20 +77,3 @@ if (isMainModule(import.meta.url)) {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
 }
-
-
-export async function netlifyAppEngineHandler(
-  request: Request
-): Promise<Response> {
-  const context = getContext();
-
-  const result = await angularAppEngine.handle(request, context);
-  return result || new Response('Not found', { status: 404 });
-}
-
-
-
-/**
- * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
- */
-export const reqHandler = createRequestHandler(netlifyAppEngineHandler);
