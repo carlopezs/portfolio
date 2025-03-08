@@ -9,5 +9,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
 
     provideExperimentalZonelessChangeDetection(),
-    provideRouter(routes), provideAnimationsAsync(), provideClientHydration(withEventReplay())]
+    provideRouter(routes),
+    provideAnimationsAsync(),
+    provideClientHydration(withEventReplay())]
 };
