@@ -14,10 +14,17 @@ import { Router } from '@angular/router';
 import { RouteApp } from '@models/routes.model';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { AvatarComponent } from '../avatar/avatar.component';
 
 @Component({
   selector: 'general-menu-laptop',
-  imports: [MatIcon, CommonModule, MatButtonModule, MatMenuModule],
+  imports: [
+    MatIcon,
+    CommonModule,
+    MatButtonModule,
+    MatMenuModule,
+    AvatarComponent,
+  ],
   templateUrl: './menu-laptop.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -31,10 +38,15 @@ export class MenuLaptopComponent implements OnInit {
     if (!this.actualRoute()) return;
 
     let routePaths = this.actualRoute().split('/');
-    routePaths = routePaths.filter((routePath) => routePath != '');
+    routePaths = routePaths.filter((routePath) => routePath != '' && routePath != 'portfolio');
+
 
     const principalPath =
       routePaths.length >= 3 ? routePaths[1] : routePaths[0];
+
+    console.log(routePaths);
+
+    console.log(principalPath);
 
     return principalPath == undefined || principalPath == 'portfolio'
       ? 'home'

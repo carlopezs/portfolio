@@ -7,12 +7,10 @@ import { ChangeDetectionStrategy, Component, viewChild } from '@angular/core';
   styleUrl: './avatar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: `flex justify-center rounded-full bg-secondary w-36 h-36 mr-7 cursor-pointer`,
+    class: `flex justify-center rounded-full bg-secondary w-full h-full mr-7 cursor-pointer`,
     '(mousemove)': 'updateImage($event)',
     '(mouseleave)': 'updateImage($event)',
     '(click)': 'updateImage($event)',
-
-
     '(touchend)': 'updateImage($event)',
     '(touchstart)': 'updateImage($event)',
   },

@@ -49,12 +49,16 @@ export class MenuMobileComponent {
     if (!this.actualRoute()) return 'home';
 
     let routePaths = this.actualRoute().split('/');
-    routePaths = routePaths.filter((routePath) => routePath != '');
-    const principalPath = routePaths.length >= 3? routePaths[1] : routePaths[0]
+    routePaths = routePaths.filter(
+      (routePath) => routePath != '' && routePath != 'portfolio'
+    );
 
+    const principalPath =
+      routePaths.length >= 3 ? routePaths[1] : routePaths[0];
 
-
-    return principalPath == '' || principalPath== 'portfolio'? 'home': principalPath
+    return principalPath == undefined  || principalPath == 'portfolio'
+      ? 'home'
+      : principalPath;
   });
 
   public toogleSideNav() {
