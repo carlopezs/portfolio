@@ -13,10 +13,33 @@
   </div>
 </div>
 
-<div class="px-9 grid flex-wrap py-10 gap-5 laptop:gap-20 laptop:grid-cols-3">
-  @for (certificate of certificates(); track $index) {
+<div class="flex flex-col">
 
-  <certificates-card [certificate]="certificate" />
+  <div class="common-vertical-padding mt-3">
+    <div class="relative">
+      <mat-icon
+        class=" text-primary absolute top-4 left-3"
+        aria-hidden="false"
 
-  }
+        aria-label="Search Icon"
+        fontIcon="search"
+      ></mat-icon>
+      <input
+        type="search"
+        [formControl]="searchControl"
+
+
+        class="ps-10 pr-2 border-2 outline-none focus:border-primary w-full h-14 rounded-md"
+        placeholder="Search Certificates"
+      />
+    </div>
+  </div>
+
+  <div class="px-9 grid flex-wrap py-10 gap-5 laptop:gap-20 laptop:grid-cols-3">
+    @for (certificate of certificates(); track $index) {
+
+    <certificates-card [certificate]="certificate" />
+
+    }
+  </div>
 </div>

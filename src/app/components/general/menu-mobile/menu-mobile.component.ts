@@ -48,8 +48,10 @@ export class MenuMobileComponent {
   public activateRoute = computed<string | undefined>(() => {
     if (!this.actualRoute()) return 'home';
 
-    const routePaths = this.actualRoute().split('/');
-    const principalPath = routePaths.length > 3? routePaths[2] : routePaths[1]
+    let routePaths = this.actualRoute().split('/');
+    routePaths = routePaths.filter((routePath) => routePath != '');
+    const principalPath = routePaths.length >= 3? routePaths[1] : routePaths[0]
+
 
 
     return principalPath == '' || principalPath== 'portfolio'? 'home': principalPath

@@ -2,16 +2,16 @@ import { ToolHomeComponent } from '@components/home/tools/tool-home/tool-home.co
 import {
   ChangeDetectionStrategy,
   Component,
-  input,
   signal,
   WritableSignal,
 } from '@angular/core';
 import { Tool } from '@models/tools.model';
 import { tools as dataTools } from '@data/tools';
+import { AvatarComponent } from '@components/general/avatar/avatar.component';
 
 @Component({
   selector: 'home-tools',
-  imports: [ToolHomeComponent],
+  imports: [ToolHomeComponent, AvatarComponent],
   templateUrl: './tools.component.html',
   styleUrl: './tools.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

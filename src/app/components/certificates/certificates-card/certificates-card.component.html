@@ -1,8 +1,8 @@
 <div
-  class="flex flex-col space-y-2 rounded-md pb-6 bg-primary  text-white laptop:pb-3"
+  class=" flex flex-col space-y-2 rounded-md pb-6 bg-primary text-white laptop:pb-3"
 >
-  <div class="h-64 ">
-    <img class="h-full w-full object-cover" [src]="certificate().image" />
+  <div class="h-64">
+    <img class= " animate-fadeIn h-full w-full object-cover" [src]="certificate().image" />
   </div>
 
   <div class="flex flex-col space-y-3 px-5">
@@ -14,13 +14,14 @@
       </p>
     </div>
 
-    <button
-      type="button"
-      class="border border-white py-2 px-4 rounded text-center hover:text-white hover:bg-secondary hover:border-secondary hover:scale-105 laptop:w-36"
+    <a
+      [href]="certificate().url"
+      target="_blank"
+      class="border cursor-pointer border-white py-2 px-4 rounded text-center hover:text-white hover:bg-secondary hover:border-secondary hover:scale-105 laptop:w-36"
     >
       <div class="flex justify-center items-center space-x-2">
         <span class="text-sm">Show</span>
       </div>
-    </button>
+    </a>
   </div>
 </div>

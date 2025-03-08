@@ -19,8 +19,6 @@ export class CertificatesService {
   constructor() {}
 
   public loadCertificates() {
-    setTimeout(() => {
-      this._certificates.set([...certificates]);
-    }, 0);
+    this._certificates.set([...certificates]);
   }
 }

@@ -8,23 +8,31 @@
       <h1 class="text-xl font-bold">My Experience</h1>
 
       <p class="text-sm">
-        I have experience in web development with Angular, as well as
-        mobile app development using Flutter. On the backend, I
-        have worked with Node.js and Java. I have contributed to projects in
-        companies like Gestor, NousClick, Plus, and Icarus
+        I have experience in web development with Angular, as well as mobile app
+        development using Flutter. On the backend, I have worked with Node.js
+        and Java. I have contributed to projects in companies like Gestor,
+        NousClick, Plus, and Icarus
       </p>
     </div>
 
     <div class="flex flex-col space-y-2 laptop:w-1/2">
       <div class="flex flex-col space-y-2">
-        <div class="border rounded-full max-w-44 h-auto px-4 py-2">
-          <p class="text-sm">
-            {{ actualJob().initDate | date : "dd/MM/YY" }} -
-            {{ actualJob().endDate | date : "dd/MM/YY" }}
-          </p>
-        </div>
+        <div class="flex flex-row items-center space-x-3">
+          <h1 class="text-xl font-bold">{{ actualJob().title }}</h1>
 
-        <h1 class="text-xl font-bold">{{ actualJob().title }}</h1>
+          <div class="border rounded-full max-w-44 h-auto px-4 py-2">
+            <p class="text-sm">
+              {{ actualJob().initDate | date : "dd/MM/YY" }} -
+              @if(isTheSameDateToday(actualJob().endDate )) {
+                Present
+              }@else{
+                {{ actualJob().endDate | date : "dd/MM/YY" }}
+              }
+
+
+            </p>
+          </div>
+        </div>
 
         <hr />
 

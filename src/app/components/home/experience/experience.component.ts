@@ -1,5 +1,10 @@
-
-import { ChangeDetectionStrategy, Component, computed, signal, WritableSignal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  signal,
+  WritableSignal,
+} from '@angular/core';
 import { Job } from '@models/job.model';
 import { jobs as dataJobs } from '@data/jobs';
 import { CommonModule } from '@angular/common';
@@ -18,8 +23,6 @@ export class ExperienceComponent {
 
   public actualJob = computed(() => this.jobs()[this.actualIndexJob()]);
 
-
-
   public isLastIndex = computed(
     () => this.actualIndexJob() === this.jobs().length - 1
   );
@@ -36,5 +39,17 @@ export class ExperienceComponent {
     if (this.actualIndexJob() === 0) return;
 
     this.actualIndexJob.update((index) => index - 1);
+  }
+
+  public isTheSameDateToday(date: Date) {
+    const actualDate = new Date();
+    actualDate.setHours(0, 0, 0, 0);
+    date.setHours(0, 0, 0, 0);
+
+    if (date.getTime() == actualDate.getTime()) {
+      return true;
+    }
+
+    return false;
   }
 }

@@ -25,9 +25,27 @@
       </button>
 
       <mat-menu #menu>
-        <a mat-menu-item href="cv/curriculum_english.pdf" download="carlos-lopez-english.pdf"> English </a>
+        <div mat-menu-item>
+          <div class="flex space-x-2">
+            <img src="images/flats/gb.svg" width="15" alt="colombia flat" />
 
-        <a mat-menu-item href="cv/curriculum.pdf" download="carlos-lopez-spanish.pdf"> Spanish </a>
+            <a
+              href="cv/curriculum_english.pdf"
+              download="carlos-lopez-english.pdf"
+            >
+              English
+            </a>
+          </div>
+        </div>
+
+        <div mat-menu-item>
+          <div class="flex space-x-2">
+            <img src="images/flats/co.svg" width="15" alt="colombia flat" />
+            <a href="cv/curriculum.pdf" download="carlos-lopez-spanish.pdf">
+              Spanish
+            </a>
+          </div>
+        </div>
       </mat-menu>
     </li>
   </ul>
