@@ -2,7 +2,7 @@ import {
   CdkVirtualScrollViewport,
   ScrollingModule,
 } from '@angular/cdk/scrolling';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -11,6 +11,7 @@ import {
   inject,
   input,
   OnInit,
+  PLATFORM_ID,
   Signal,
   viewChild,
 } from '@angular/core';
@@ -29,9 +30,12 @@ import { ProjectsService } from 'app/services/projects.service';
   },
 })
 export class ProjectsMenuLaptopComponent implements OnInit, AfterViewInit {
+  private platformId = inject(PLATFORM_ID);
+
   private projectService = inject(ProjectsService);
   private router = inject(Router);
   public projects = input.required<Project[]>();
+
   public virtualScroll = viewChild(CdkVirtualScrollViewport);
 
   public projectToShow: Signal<Project> = computed(() =>
@@ -41,19 +45,21 @@ export class ProjectsMenuLaptopComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    const index = this.projectToShow().id - 1;
+    if (isPlatformBrowser(this.platformId)) {
+      const index = this.projectToShow().id - 1;
 
-    setTimeout(() => {
+      setTimeout(() => {
+        const scrollOffset =
+          this.virtualScroll()?.measureScrollOffset('bottom')! +
+          this.virtualScroll()!.getDataLength() * 70;
 
-      const scrollOffset = this.virtualScroll()?.measureScrollOffset('bottom')! + this.virtualScroll()!.getDataLength() * 70;
+        this.virtualScroll()?.scrollToOffset(
+          index * (scrollOffset / this.virtualScroll()!.getDataLength()),
+          'smooth'
+        );
+      }, 1);
+    }
 
-      this.virtualScroll()?.scrollToOffset(
-        index *
-          (scrollOffset /
-            this.virtualScroll()!.getDataLength()),
-        'smooth'
-      );
-    }, 1);
   }
 
   public chooseProjectToShowByTitle(title: string) {

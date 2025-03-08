@@ -19,6 +19,7 @@ import {
 
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-certificates',
@@ -27,6 +28,7 @@ import { map } from 'rxjs';
 })
 export default class CertificatesComponent implements OnInit {
   private readonly certificatesService = inject(CertificatesService);
+  private title = inject(Title);
 
   public allCertificates = computed(() =>
     this.certificatesService.certificates()
@@ -36,12 +38,14 @@ export default class CertificatesComponent implements OnInit {
 
   public certificates: Signal<Certificate[] | undefined> = toSignal(
     this.searchControl.valueChanges.pipe(
-      map((searchTerm:string) => {
-
+      map((searchTerm: string) => {
         if (!searchTerm) return this.allCertificates();
 
         const certificatesFiltered = this.allCertificates().filter(
-          (certificate) => certificate.courseTitle.toLowerCase().includes(searchTerm!.toLowerCase())
+          (certificate) =>
+            certificate.courseTitle
+              .toLowerCase()
+              .includes(searchTerm!.toLowerCase())
         );
 
         return certificatesFiltered == undefined ? [] : certificatesFiltered;
@@ -54,7 +58,7 @@ export default class CertificatesComponent implements OnInit {
   ngOnInit(): void {
     this.certificatesService.loadCertificates();
     this.searchControl.setValue('');
+
+    this.title.setTitle('Certificates');
   }
-
-
 }

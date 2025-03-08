@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Certificate } from '@models/certificate.model';
 
 @Component({
@@ -9,5 +10,10 @@ import { Certificate } from '@models/certificate.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CertificatesCardComponent {
+
+
+
   public certificate = input.required<Certificate>();
+
+
 }

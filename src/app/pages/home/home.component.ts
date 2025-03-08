@@ -7,6 +7,7 @@ import { ExperienceComponent } from '../../components/home/experience/experience
 import { RecentProjectsComponent } from '@components/home/recent-projects/recent-projects.component';
 import { FooterComponent } from '../../components/home/footer/footer.component';
 import { SocialNetworkService } from 'app/services/social-network.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -25,9 +26,11 @@ import { SocialNetworkService } from 'app/services/social-network.service';
 export default class HomeComponent implements OnInit {
 
   private socialNetWorkService = inject(SocialNetworkService);
+  private title = inject(Title);
 
   ngOnInit(): void {
     this.socialNetWorkService.loadSocialNetworks();
+    this.title.setTitle('Carlos López')
   }
 
 }
