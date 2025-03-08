@@ -1,5 +1,7 @@
+import { getContext } from '@netlify/angular-runtime/context';
 import { APP_BASE_HREF } from '@angular/common';
-import { CommonEngine, isMainModule } from '@angular/ssr/node';
+import { isMainModule } from '@angular/ssr/node';
+import { AngularAppEngine } from '@angular/ssr';
 import express from 'express';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -11,7 +13,7 @@ const browserDistFolder = resolve(serverDistFolder, '../browser');
 const indexHtml = join(serverDistFolder, 'index.server.html');
 
 const app = express();
-const commonEngine = new CommonEngine();
+const angularAppEngine = new AngularAppEngine();
 
 /**
  * Example Express Rest API endpoints can be defined here.
@@ -43,28 +45,27 @@ app.get(
   }),
 );
 
-/**
- * Handle all other requests by rendering the Angular application.
- */
-app.get('**', (req, res, next) => {
-  const { protocol, originalUrl, baseUrl, headers } = req;
 
-  console.log(baseUrl);
+export async function handler(event: any, context: any): Promise<any> {
+  const request = new Request(event.rawUrl, {
+    method: event.httpMethod,
+    headers: event.headers,
+    body: event.body,
+  });
 
-  commonEngine
-    .render({
-      bootstrap,
-      documentFilePath: indexHtml,
-      url: `${protocol}://${headers.host}${originalUrl}`,
-      publicPath: browserDistFolder,
-      providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
-    })
-    .then((html) => res.send(html))
-    .catch((err) => next(err));
-});
-
-export async function netlifyCommonEngineHandler(request: Request, context: any): Promise<Response> {
-  return await render(commonEngine)
+  const result = await angularAppEngine.handle(request, getContext());
+  if (result) {
+    return {
+      statusCode: result.status,
+      headers: Object.fromEntries(result.headers.entries()),
+      body: await result.text(),
+    };
+  } else {
+    return {
+      statusCode: 404,
+      body: 'Not found',
+    };
+  }
 }
 
 /**
