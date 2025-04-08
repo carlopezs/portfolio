@@ -29,7 +29,7 @@ export const projects: Project[] = [
   {
     id: 2,
     title: 'Cota City',
-    image: 'images/projects/cota_city.png',
+    image: 'images/projects/cota_city.avif',
     description:
       "Cota City is a mobile application specifically developed for a soccer school in Cotacachi, Ecuador. It streamlines the management of student data, tuition payments, class schedules, and other administrative tasks, making it an invaluable tool for both teachers and administrators. The app is built to handle the dynamic needs of a sports academy, ensuring that all information is updated in real time. It leverages the power of Flutter for a smooth user interface, while Node.js with GraphQL enables efficient data management on the backend. MongoDB is used for flexible data storage, and OneSignal provides a reliable notification system. Overall, Cota City is a comprehensive solution that enhances operational efficiency and supports the growth of the soccer school.",
     tools: [
