@@ -68,6 +68,8 @@ export default class ProjectsComponent implements OnInit {
         content: project.description,
       });
       const imageOg = project.image.split('/')[2];
+      console.log(imageOg);
+      console.log(`https://portfolioclopez.netlify.app/images/projects/${imageOg}`);
       this.meta.updateTag({
         name: 'og:image',
         content: `https://portfolioclopez.netlify.app/images/projects/${imageOg}`,
