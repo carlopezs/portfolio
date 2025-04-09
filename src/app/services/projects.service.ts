@@ -33,7 +33,7 @@ export class ProjectsService {
     this._projectToShow.set(projectToShow);
   }
 
-  public chooseProjectToShowByTitle(title: string): string | undefined {
+  public chooseProjectToShowByTitle(title: string): Project | undefined {
     const projectToShow = this._projects().find((project) => {
       const projectTitleLower = project.title
         .toLocaleLowerCase()
@@ -45,6 +45,6 @@ export class ProjectsService {
 
     if (!projectToShow) return;
     this._projectToShow.set(projectToShow);
-    return projectToShow.title;
+    return projectToShow;
   }
 }

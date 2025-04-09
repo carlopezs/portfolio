@@ -64,7 +64,7 @@ export default class ProjectsComponent implements OnInit {
       });
       this.meta.updateTag({ name: 'og:title', content: project.title! });
       this.meta.updateTag({name:'og:descrciption', content:project.description})
-      this.meta.updateTag({name:'og:image', content:project.image})
+     /*  this.meta.updateTag({name:'og:image', content:project.image}) */
     });
   }
 }
