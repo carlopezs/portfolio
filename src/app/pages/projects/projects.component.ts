@@ -63,8 +63,15 @@ export default class ProjectsComponent implements OnInit {
         content: project.description!,
       });
       this.meta.updateTag({ name: 'og:title', content: project.title! });
-      this.meta.updateTag({name:'og:descrciption', content:project.description})
-     /*  this.meta.updateTag({name:'og:image', content:project.image}) */
+      this.meta.updateTag({
+        name: 'og:descrciption',
+        content: project.description,
+      });
+      const imageOg = project.image.split('/')[2];
+      this.meta.updateTag({
+        name: 'og:image',
+        content: `https://portfolioclopez.netlify.app/images/projects/${imageOg}`,
+      });
     });
   }
 }
