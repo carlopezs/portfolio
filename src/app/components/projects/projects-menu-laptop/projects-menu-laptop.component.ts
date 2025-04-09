@@ -63,6 +63,7 @@ export class ProjectsMenuLaptopComponent implements OnInit, AfterViewInit {
   }
 
   public chooseProjectToShowByTitle(title: string) {
-    this.router.navigate(['projects', title]);
+    const titleParam =  title.toLocaleLowerCase().split(' ').join('');
+    this.router.navigate(['projects', titleParam]);
   }
 }
