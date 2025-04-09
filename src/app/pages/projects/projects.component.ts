@@ -6,7 +6,6 @@ import {
   linkedSignal,
   OnInit,
   Signal,
-  signal,
   WritableSignal,
 } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
@@ -49,12 +48,14 @@ export default class ProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.projectService.loadProjects();
     this.activatedRoute.params.subscribe((value) => {
+
       if (value['title'] == 'all') {
         this.title.setTitle(this.projectToShow().title);
         return;
       }
-      this.title.setTitle(value['title']);
-      this.projectService.chooseProjectToShowByTitle(value['title']);
+      const title = this.projectService.chooseProjectToShowByTitle(value['title']);
+      this.title.setTitle(title?? 'Projects');
+
     });
   }
 }
