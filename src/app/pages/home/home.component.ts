@@ -30,7 +30,7 @@ export default class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.socialNetWorkService.loadSocialNetworks();
-    this.title.setTitle('Carlos López')
+    this.title.setTitle('Carlos López');
   }
 
 }
