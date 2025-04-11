@@ -27,6 +27,10 @@ import { AvatarComponent } from '../avatar/avatar.component';
   ],
   templateUrl: './menu-laptop.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host:{
+    class:'hidden laptop:block'
+  }
+
 })
 export class MenuLaptopComponent implements OnInit {
   private location = inject(Location);

@@ -1,5 +1,5 @@
 <div
-  class="flex flex-row justify-between p-3 items-center bg-primary text-white h-20"
+  class="flex flex-row justify-between p-3 items-center bg-primary text-white h-20  laptop:hidden"
 >
   <button mat-icon-button (click)="toogleSideNav()">
     <mat-icon class="text-white">menu</mat-icon>
@@ -23,8 +23,17 @@
   </div>
 </div>
 
+<general-menu-laptop
+
+[routes]="routes()"
+/>
+
+
 <mat-sidenav-container class="flex-1">
-  <mat-sidenav [opened]="isOpenSideNav()" fixedTopGap="56">
+
+
+
+  <mat-sidenav [opened]="isOpenSideNav()" fixedTopGap="56" class=" block laptop:hidden">
     <ul
       class="flex flex-col p-8 space-y-8 items-start bg-primary text-white h-full"
     >

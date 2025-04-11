@@ -1,4 +1,5 @@
 import {
+  ApplicationRef,
   ChangeDetectionStrategy,
   Component,
   computed,
@@ -15,6 +16,8 @@ import { RouteApp } from '@models/routes.model';
 import { MenuMobileComponent } from '@components/general/menu-mobile/menu-mobile.component';
 import { MenuLaptopComponent } from '@components/general/menu-laptop/menu-laptop.component';
 import { isPlatformBrowser } from '@angular/common';
+import { Title } from '@angular/platform-browser';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'app-layaout',
@@ -29,13 +32,28 @@ import { isPlatformBrowser } from '@angular/common';
 export class LayaoutComponent {
   private platformId = inject(PLATFORM_ID);
 
-  private windowWith = linkedSignal(()=> this.isExecuteInBrowser() ? window.innerWidth : 0);
+
+  private appRef = inject(ApplicationRef);
+
+  private title = inject(Title);
+
+  private windowWith = linkedSignal(()=> this.isExecuteInBrowser() ? window.innerWidth : 1024);
+
+  private $appState = this.appRef.isStable.pipe(first(stable => stable === true)).subscribe((isStable)=>{
+
+    if (isStable) {
+      console.log('La app estable');
+    }
+
+  })
+
+  public isMobile = computed(() => this.windowWith() <= 1023);
 
   public isOpenSideNav = signal(false);
 
   public isExecuteInBrowser = signal(isPlatformBrowser(this.platformId));
 
-  public isMobile = computed(() => this.windowWith() <= 1023);
+
 
   public routes: WritableSignal<RouteApp[]> = signal([
     {
@@ -68,6 +86,10 @@ export class LayaoutComponent {
     if (isPlatformBrowser(this.platformId)) {
       this.windowWith.set(window.innerWidth);
     }
+
+    this.title.setTitle('Holaaaaa')
+
+
   }
 
   public verifySizeScreen() {

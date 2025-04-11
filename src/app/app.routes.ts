@@ -17,7 +17,7 @@ export const routes: Routes = [
   },
   {
     path: 'certificates',
-
+    title:'Certificates',
     loadComponent: () => import('./pages/certificates/certificates.component'),
   },
 

@@ -1,12 +1,7 @@
-@if(isExecuteInBrowser()) {
-  @if (isMobile() ) {
-    <general-menu-mobile [routes]="routes()">
-      <router-outlet />
-    </general-menu-mobile>
-    }@else {
-    <general-menu-laptop [routes]="routes()">
-      <router-outlet />
-    </general-menu-laptop>
-    }
 
-}
+<general-menu-mobile [routes]="routes()">
+  <router-outlet />
+</general-menu-mobile>
+
+
+

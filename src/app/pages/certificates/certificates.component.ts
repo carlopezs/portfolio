@@ -1,7 +1,7 @@
 import { Certificate } from '@models/certificate.model';
 import { CertificatesCardComponent } from '@components/certificates/certificates-card/certificates-card.component';
 import { CertificatesService } from 'app/services/certificates.service';
-import { Component, computed, inject, OnInit, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, OnInit, Signal } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
@@ -13,6 +13,7 @@ import { Meta, Title } from '@angular/platform-browser';
   selector: 'app-certificates',
   imports: [CertificatesCardComponent, MatIcon, ReactiveFormsModule],
   templateUrl: './certificates.component.html',
+  changeDetection:ChangeDetectionStrategy.OnPush,
 })
 export default class CertificatesComponent implements OnInit {
   private readonly certificatesService = inject(CertificatesService);
@@ -43,17 +44,21 @@ export default class CertificatesComponent implements OnInit {
     )
   );
 
-  /*   linkedSignal(()=>this.certificatesService.certificates()) */
-
-  ngOnInit(): void {
-    this.certificatesService.loadCertificates();
-    this.searchControl.setValue('');
-
+  constructor(){
     this.title.setTitle('Certificates');
     this.meta.updateTag({
       name: 'description',
       content: 'I have earned multiple certifications that showcase my expertise in both frontend and backend development. ',
     });
     this.meta.updateTag({ name: 'og:title', content: 'Certificates'});
+  }
+
+  /*   linkedSignal(()=>this.certificatesService.certificates()) */
+
+  ngOnInit(): void {
+    this.certificatesService.loadCertificates();
+    this.searchControl.setValue('');
+
+
   }
 }

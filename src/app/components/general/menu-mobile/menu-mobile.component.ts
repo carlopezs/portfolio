@@ -17,6 +17,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
 import { RouteApp } from '@models/routes.model';
+import { MenuLaptopComponent } from "../menu-laptop/menu-laptop.component";
 
 @Component({
   selector: 'general-menu-mobile',
@@ -30,14 +31,18 @@ import { RouteApp } from '@models/routes.model';
     MatListModule,
     MatButtonModule,
     MatMenuModule,
-  ],
+    MenuLaptopComponent,
+
+],
   templateUrl: './menu-mobile.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styles: `mat-sidenav {
       width: 285px;
       border-radius: 0;
     }
+
     `,
+
 })
 export class MenuMobileComponent {
   private location = inject(Location);
