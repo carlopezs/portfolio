@@ -42,7 +42,7 @@ export const serverRoutes: ServerRoute[] = [
   {
     path: 'certificates',
 
-    renderMode: RenderMode.Server,
+    renderMode: RenderMode.Prerender,
   },
 
   {
