@@ -38,9 +38,7 @@
             "ssr": {
               "entry": "src/server.ts"
             },
-            "prerender":{
-               "routesFile": "routes.txt"
-            },
+
             "outputMode": "server"
           },
           "configurations": {

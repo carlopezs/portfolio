@@ -1,25 +1,13 @@
 import { Certificate } from '@models/certificate.model';
 import { CertificatesCardComponent } from '@components/certificates/certificates-card/certificates-card.component';
 import { CertificatesService } from 'app/services/certificates.service';
-import {
-  Component,
-  computed,
-  inject,
-  linkedSignal,
-  OnInit,
-  Signal,
-} from '@angular/core';
+import { Component, computed, inject, OnInit, Signal } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import {
-  FormControl,
-  FormControlName,
-  FormsModule,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-certificates',
@@ -29,6 +17,8 @@ import { Title } from '@angular/platform-browser';
 export default class CertificatesComponent implements OnInit {
   private readonly certificatesService = inject(CertificatesService);
   private title = inject(Title);
+  private meta = inject(Meta);
+
 
   public allCertificates = computed(() =>
     this.certificatesService.certificates()
@@ -60,5 +50,10 @@ export default class CertificatesComponent implements OnInit {
     this.searchControl.setValue('');
 
     this.title.setTitle('Certificates');
+    this.meta.updateTag({
+      name: 'description',
+      content: 'I have earned multiple certifications that showcase my expertise in both frontend and backend development. ',
+    });
+    this.meta.updateTag({ name: 'og:title', content: 'Certificates'});
   }
 }
