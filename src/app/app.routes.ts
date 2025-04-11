@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { projectResolver } from './resolvers/project.resolver';
 
 export const routes: Routes = [
   {
@@ -12,6 +13,7 @@ export const routes: Routes = [
   {
     path: 'projects/:title',
     loadComponent: () => import('./pages/projects/projects.component'),
+
   },
   {
     path: 'certificates',

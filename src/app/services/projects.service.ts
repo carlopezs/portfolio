@@ -47,4 +47,10 @@ export class ProjectsService {
     this._projectToShow.set(projectToShow);
     return projectToShow;
   }
+
+  public getProjectsTitles():string[] {
+    return this.projects().map((project) => {
+      return project.title.toLocaleLowerCase().split(' ').join('');
+    });
+  }
 }

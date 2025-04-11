@@ -35,12 +35,13 @@
             ],
             "scripts": [],
             "server": "src/main.server.ts",
-            "prerender": {
-              "routesFile": "routes.txt"
-            },
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "prerender":{
+               "routesFile": "routes.txt"
+            },
+            "outputMode": "server"
           },
           "configurations": {
             "production": {
