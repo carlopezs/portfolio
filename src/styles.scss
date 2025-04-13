@@ -37,7 +37,10 @@ mat-sidenav {
 
 
 ::-webkit-scrollbar-thumb {
-  background: #138086;
+
+
+  @apply bg-secondary;
+
 
 }
 
