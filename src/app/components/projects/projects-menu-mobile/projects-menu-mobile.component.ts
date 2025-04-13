@@ -42,6 +42,7 @@ export class MenuProjectsMobileComponent implements AfterViewInit {
   }
 
   public chooseProjectToShow(title: string) {
-    this.router.navigate(['projects', title]);
+    const titleParam =  title.toLocaleLowerCase().split(' ').join('');
+    this.router.navigate(['projects', titleParam]);
   }
 }

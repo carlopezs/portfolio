@@ -32,28 +32,19 @@ import { first } from 'rxjs';
 export class LayaoutComponent {
   private platformId = inject(PLATFORM_ID);
 
-
   private appRef = inject(ApplicationRef);
 
   private title = inject(Title);
 
-  private windowWith = linkedSignal(()=> this.isExecuteInBrowser() ? window.innerWidth : 1024);
-
-  private $appState = this.appRef.isStable.pipe(first(stable => stable === true)).subscribe((isStable)=>{
-
-    if (isStable) {
-      console.log('La app estable');
-    }
-
-  })
+  private windowWith = linkedSignal(() =>
+    this.isExecuteInBrowser() ? window.innerWidth : 1024
+  );
 
   public isMobile = computed(() => this.windowWith() <= 1023);
 
   public isOpenSideNav = signal(false);
 
   public isExecuteInBrowser = signal(isPlatformBrowser(this.platformId));
-
-
 
   public routes: WritableSignal<RouteApp[]> = signal([
     {
@@ -86,8 +77,6 @@ export class LayaoutComponent {
     if (isPlatformBrowser(this.platformId)) {
       this.windowWith.set(window.innerWidth);
     }
-
-    this.title.setTitle('Holaaaaa')
 
 
   }
