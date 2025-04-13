@@ -51,7 +51,6 @@ export default class ProjectsComponent implements OnInit {
     this.title.setTitle('pruebaaa');
     this.meta.updateTag({ name: 'og:title', content: 'pruebaaaa' });
 
-
     this.activatedRoute.params.subscribe((value) => {
       if (value['title'] == 'all') {
         this.title.setTitle(this.projectToShow().title);
@@ -72,8 +71,7 @@ export default class ProjectsComponent implements OnInit {
         content: project!.description,
       });
       const imageOg = project!.image.split('/')[2];
-      console.log(imageOg);
-      console.log(`https://portfolioclopez.netlify.app/images/projects/${imageOg}`);
+
       this.meta.updateTag({
         name: 'og:image',
         content: `https://portfolioclopez.netlify.app/images/projects/${imageOg}`,

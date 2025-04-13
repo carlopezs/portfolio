@@ -45,19 +45,22 @@ export default class CertificatesComponent implements OnInit {
   );
 
   constructor(){
+
+  }
+
+
+
+  ngOnInit(): void {
+    this.certificatesService.loadCertificates();
+    this.searchControl.setValue('');
+
     this.title.setTitle('Certificates');
     this.meta.updateTag({
       name: 'description',
       content: 'I have earned multiple certifications that showcase my expertise in both frontend and backend development. ',
     });
     this.meta.updateTag({ name: 'og:title', content: 'Certificates'});
-  }
 
-  /*   linkedSignal(()=>this.certificatesService.certificates()) */
-
-  ngOnInit(): void {
-    this.certificatesService.loadCertificates();
-    this.searchControl.setValue('');
 
 
   }
