@@ -41,7 +41,7 @@ export default class AboutComponent implements OnInit {
 
     this.meta.updateTag({
       name: 'og:image',
-      content: `https://portfolioclopez.netlify.app/images/me/avatar_me_2.webp`,
+      content: `https://portfolioclopez.netlify.app/images/me/mecoffeanimation.webp`,
     });
   }
 }
