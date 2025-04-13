@@ -16,18 +16,18 @@ import { ChangeDetectionStrategy, Component, viewChild } from '@angular/core';
   },
 })
 export class AvatarComponent {
-  public src = 'images/me/avatarme.png';
+  public src = 'images/me/avatarme.webp';
 
   public updateImage(event: MouseEvent | TouchEvent) {
 
     if (event.type === 'mousemove') {
-      this.src = 'images/me/avatar_me_2.png';
+      this.src = 'images/me/avatar_me_2.webp';
     } else if (event.type === 'mouseleave') {
-      this.src = 'images/me/avatarme.png';
+      this.src = 'images/me/avatarme.webp';
     } else if (event.type === 'touchstart') {
-      this.src = 'images/me/avatar_me_surprise.png';
+      this.src = 'images/me/avatar_me_surprise.webp';
     } else if (event.type === 'touchend') {
-      this.src = 'images/me/avatar_me_2.png';
+      this.src = 'images/me/avatar_me_2.webp';
     }
   }
 }

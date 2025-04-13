@@ -25,6 +25,12 @@ export default class AboutComponent implements OnInit {
   ngOnInit(): void {
     this.title.setTitle('About Me');
 
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'I am a passionate software developer with a strong foundation in problem-solving and innovation. My ability to think critically and manage time effectively allows me to build efficient solutions while meeting deadlines.',
+    });
+
     this.meta.updateTag({ name: 'og:title', content: 'Carlos López' });
 
     this.meta.updateTag({
@@ -35,7 +41,7 @@ export default class AboutComponent implements OnInit {
 
     this.meta.updateTag({
       name: 'og:image',
-      content: `https://portfolioclopez.netlify.app/images/me/avatar_me_2.png`,
+      content: `https://portfolioclopez.netlify.app/images/me/avatar_me_2.webp`,
     });
   }
 }

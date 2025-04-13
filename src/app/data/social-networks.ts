@@ -5,13 +5,13 @@ export const SOCIAL_NETWORKS: SocialNetWork[] = [
   {
     title: "GitHub",
     url: "https://github.com/carlopezs",
-    image: "images/icons/github.png"
+    image: "images/icons/github.webp"
   },
   {
     title: "LinkedIn",
 
     url: "https://www.linkedin.com/in/carlosalopez10/",
-    image: "images/icons/linkedin.png"
+    image: "images/icons/linkedin.webp"
   },
   {
     title: "Instagram",
