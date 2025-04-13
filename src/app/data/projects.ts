@@ -21,7 +21,7 @@ export const projects: Project[] = [
       },
       {
         title: 'OneSignal',
-        image: 'images/tools/onesignal.svg',
+        image: 'images/tools/onesignal.webp',
         link: 'https://onesignal.com/',
       },
     ],
@@ -40,7 +40,7 @@ export const projects: Project[] = [
       },
       {
         title: 'Node.js',
-        image: 'images/tools/nodejs.svg',
+        image: 'images/tools/nodejs.webp',
         link: 'https://nodejs.org/',
       },
       {
@@ -55,7 +55,7 @@ export const projects: Project[] = [
       },
       {
         title: 'OneSignal',
-        image: 'images/tools/onesignal.svg',
+        image: 'images/tools/onesignal.webp',
         link: 'https://onesignal.com/',
       },
     ],
@@ -93,7 +93,7 @@ export const projects: Project[] = [
       },
       {
         title: 'TypeScript',
-        image: 'images/tools/typescript.svg',
+        image: 'images/tools/typescript.webp',
         link: 'https://www.typescriptlang.org/',
       },
       {
