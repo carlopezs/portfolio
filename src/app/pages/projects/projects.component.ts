@@ -52,12 +52,8 @@ export default class ProjectsComponent implements OnInit {
     this.meta.updateTag({ name: 'og:title', content: 'pruebaaaa' });
 
     this.activatedRoute.params.subscribe((value) => {
-      if (value['title'] == 'all') {
-        this.title.setTitle(this.projectToShow().title);
-        return;
-      }
       const project = this.projectService.chooseProjectToShowByTitle(
-        value['title']
+        value['title'] == 'all' ? 'teayudoapp' : value['title']
       );
 
       this.title.setTitle(project!.title ?? 'Projects');
