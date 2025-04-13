@@ -21,6 +21,7 @@ export const serverRoutes: ServerRoute[] = [
       const projectService = inject(ProjectsService);
       projectService.loadProjects();
       const projectsTitle = projectService.getProjectsTitles();
+      projectsTitle.push('all');
       return projectsTitle.map((title) => ({ title }));
     },
   },
