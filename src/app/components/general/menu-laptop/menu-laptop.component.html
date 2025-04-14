@@ -2,7 +2,7 @@
   <ul
     class="flex flex-row justify-between p-8 items-center bg-primary text-white h-20"
   >
-    <li class="flex flex-row  justify-between items-center space-x-9">
+    <li class="flex flex-row justify-between items-center space-x-9">
       <div class="h-12 w-12">
         <general-avatar />
       </div>
@@ -27,29 +27,30 @@
         <div>Download CV</div>
       </button>
 
-
       <mat-menu #menu>
-        <div mat-menu-item>
+        <a
+          class="flex"
+          mat-menu-item
+          href="cv/curriculum_english.pdf"
+          download="carlos-lopez-english.pdf"
+        >
           <div class="flex space-x-2">
             <img src="images/flats/gb.svg" width="15" alt="English flat" />
-
-            <a
-              href="cv/curriculum_english.pdf"
-              download="carlos-lopez-english.pdf"
-            >
-              English
-            </a>
+            <div>English</div>
           </div>
-        </div>
+        </a>
 
-        <div mat-menu-item>
+        <a
+          class="flex"
+          mat-menu-item
+          href="cv/curriculum.pdf"
+          download="carlos-lopez-english.pdf"
+        >
           <div class="flex space-x-2">
-            <img src="images/flats/co.svg" width="15" alt="colombia flat" />
-            <a href="cv/curriculum.pdf" download="carlos-lopez-spanish.pdf">
-              Spanish
-            </a>
+            <img src="images/flats/co.svg" width="15" alt="English flat" />
+            <div>Spanish</div>
           </div>
-        </div>
+        </a>
       </mat-menu>
     </li>
   </ul>
