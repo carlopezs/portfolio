@@ -67,7 +67,8 @@
 
 
         <mat-nav-list>
-          <button class="flex text-white" [matMenuTriggerFor]="menuLanguage">
+          <button class="flex space-x-2 text-white" [matMenuTriggerFor]="menuLanguage">
+            <mat-icon fontIcon="language"></mat-icon>
             <div>{{ "languages." + currentLang().code | translate }}</div>
             <mat-icon fontIcon="keyboard_arrow_down"></mat-icon>
           </button>

@@ -3,7 +3,6 @@ import { inject } from '@angular/core';
 import { RenderMode, ServerRoute } from '@angular/ssr';
 import { ProjectsService } from './services/projects.service';
 
-const SUPPORTED_LANGUAGES = ['en', 'es'];
 
 
 export const serverRoutes: ServerRoute[] = [
@@ -11,7 +10,7 @@ export const serverRoutes: ServerRoute[] = [
 
   {
     path: '',
-    renderMode: RenderMode.Server,
+    renderMode: RenderMode.Client,
 
 
   },
