@@ -44,8 +44,9 @@
     <ul
       class="flex flex-col p-8 space-y-8 items-start bg-primary text-white h-full"
     >
-      @for (route of routes(); track $index) {
-      <li>
+
+        @for (route of routes(); track $index) {
+          <li>
         <mat-nav-list
           class="cursor-pointer"
           (click)="navigateToOtherSection(route.route)"
@@ -61,12 +62,12 @@
             <div>{{ "navbar." + route.title | translate }}</div>
           </div>
         </mat-nav-list>
-      </li>
-      }
-      <li>
+
+        }
+
+
         <mat-nav-list>
-          <button class="flex space-x-2 text-white" [matMenuTriggerFor]="menuLanguage">
-            <mat-icon fontIcon="language"></mat-icon>
+          <button class="flex text-white" [matMenuTriggerFor]="menuLanguage">
             <div>{{ "languages." + currentLang().code | translate }}</div>
             <mat-icon fontIcon="keyboard_arrow_down"></mat-icon>
           </button>
@@ -87,7 +88,7 @@
             }
           </mat-menu>
         </mat-nav-list>
-      </li>
+
     </ul>
   </mat-sidenav>
   <mat-sidenav-content>
