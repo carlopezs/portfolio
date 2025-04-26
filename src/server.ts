@@ -5,7 +5,7 @@ import {
   isMainModule,
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
-import express from 'express';
+/* import express from 'express'; */
 /* import { dirname, resolve } from 'node:path'; */
 import { fileURLToPath } from 'node:url';
 import { getContext } from '@netlify/angular-runtime/context';
@@ -14,8 +14,8 @@ import { APP_BASE_HREF } from '@angular/common';
 /* const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser'); */
 
-const app = express();
-const angularApp = new AngularNodeAppEngine();
+/* const app = express(); */
+/* const angularApp = new AngularNodeAppEngine(); */
 const angularAppEngine = new AngularAppEngine();
 
 export async function netlifyAppEngineHandler(
@@ -54,7 +54,7 @@ export async function netlifyAppEngineHandler(
 /**
  * Handle all other requests by rendering the Angular application.
  */
-app.use('/**', (req, res, next) => {
+/* app.use('/**', (req, res, next) => {
   const cookies = req.headers.cookie ?? '';
   const {  baseUrl} = req;
   const langCookie =
@@ -77,17 +77,17 @@ app.use('/**', (req, res, next) => {
     )
     .catch(next);
 });
-
+ */
 /**
  * Start the server if this module is the main entry point.
  * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
  */
-if (isMainModule(import.meta.url)) {
+/* if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
   app.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
-}
+} */
 
 /**
  * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
