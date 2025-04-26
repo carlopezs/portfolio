@@ -15,10 +15,11 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 import { Meta, Title } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-certificates',
-  imports: [CertificatesCardComponent, MatIcon, ReactiveFormsModule],
+  imports: [CertificatesCardComponent, MatIcon, ReactiveFormsModule, TranslateModule],
   templateUrl: './certificates.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

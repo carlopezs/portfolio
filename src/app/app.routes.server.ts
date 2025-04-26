@@ -2,33 +2,33 @@
 import { inject } from '@angular/core';
 import { RenderMode, ServerRoute } from '@angular/ssr';
 import { ProjectsService } from './services/projects.service';
+
+const SUPPORTED_LANGUAGES = ['en', 'es'];
+
+
 export const serverRoutes: ServerRoute[] = [
 
 
   {
     path: '',
-    renderMode: RenderMode.Prerender,
+    renderMode: RenderMode.Server,
+
+
   },
   {
     path: 'about',
-    renderMode: RenderMode.Prerender,
+    renderMode: RenderMode.Server,
   },
   {
     path: 'projects/:title',
-    renderMode: RenderMode.Prerender,
+    renderMode: RenderMode.Server,
 
-    async getPrerenderParams() {
-      const projectService = inject(ProjectsService);
-      projectService.loadProjects();
-      const projectsTitle = projectService.getProjectsTitles();
-      projectsTitle.push('all');
-      return projectsTitle.map((title) => ({ title }));
-    },
+
   },
   {
     path: 'certificates',
 
-    renderMode: RenderMode.Prerender,
+    renderMode: RenderMode.Server,
   },
 
   {

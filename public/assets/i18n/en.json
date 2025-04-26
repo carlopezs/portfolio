@@ -1,0 +1,160 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Me",
+    "project": "Projects",
+    "certificates": "Certificates",
+    "downloadCV": "Download CV"
+  },
+  "languages": {
+    "es": "Spanish",
+    "en": "English"
+  },
+  "hero": {
+    "greeting": "Hi, I'm Carlos",
+    "title": "Fullstack Developer",
+    "description": "Software Engineer with expertise in full-stack development, creating innovative solutions using Angular, Java Spring Boot, Dart, and Flutter.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "skills": {
+    "title": "My Hard Skills",
+    "description": "Throughout my career, I have developed a solid set of technical skills that enable me to build efficient and scalable solutions. I have experience in both frontend and backend development, using modern technologies to create intuitive, optimized, and high-performance applications."
+  },
+  "education": {
+    "title": "I Have A <b> Bachelor's Degree  </b> in <b>Software Engineering.</b>",
+    "location": "I live in <b> Ibarra </b>, a scenic and culturally rich city in northern <b>Ecuador.</b",
+    "description": "I hold a Bachelor’s Degree in Software Engineering from Universidad Técnica del Norte. Throughout my career, I have worked in multiple teams, contributing to the development of innovative, efficient, and scalable software solutions. My experience includes collaborating with diverse professionals, adapting to new technologies, and solving complex challenges in software development."
+  },
+
+  "experience": {
+    "title": "My Experience",
+    "description": "I have experience in web development with <b>Angular</b>, as well as mobile app development using <b>Flutter</b>. On the backend, I have worked with <b>Node.js</b> and <b>Java</b>. I have contributed to projects in companies like <b>Gestor</b>, <b>NousClick</b>, <b>Plus</b>, and <b>Icarus</b>.",
+    "companies": {
+      "now": "Now",
+      "Icarus": {
+        "description": "A personal entrepreneurial project with friends, where we focused on bringing software engineering solutions to Ecuador, particularly in Ibarra. We developed mobile apps and high-performance websites to help businesses optimize their processes."
+      },
+      "Plus": {
+        "description": "An internet provider in Ibarra, where I completed my pre-professional internship. During this time, I supported various internal software projects, gaining hands-on experience in developing solutions tailored to the company's needs."
+      },
+      "Nous": {
+        "description": "My first professional experience, where I contributed to the development of mobile applications and websites for companies looking to modernize their operations. This role helped me build a strong foundation in software development and digital transformation."
+      },
+      "Gestor": {
+        "description": "A leading financial technology provider for investment banking in Latin America. I was involved in the development of platforms that optimize financial operations, ensuring high performance and security."
+      }
+    },
+    "navigation": {
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+
+  "myRecentProjects": {
+    "title": "My Recent Projects",
+    "description": " Here are some of the latest projects I've worked on, combining innovation, efficiency, and cutting-edge technology. Each one represents a unique challenge and a step forward in delivering high-quality solutions.",
+    "viewMore": "viewMore"
+  },
+
+  "projects": {
+    "Te Ayudo App": "Te Ayudo App is an innovative application created by and for children with autism. It is designed to facilitate communication and daily organization through the use of pictograms and personalized schedules. The app empowers children by providing an intuitive interface that helps them express their needs and manage daily tasks, while also offering parents and educators a reliable tool to track progress and adapt routines as necessary. Developed with Flutter, Firebase, and OneSignal for real-time notifications, the app features robust authentication methods via email, password, and Google login, ensuring security and ease of use. Its scalable architecture makes it a versatile solution for educational institutions and therapy centers seeking to integrate technology into their programs.",
+
+    "Cota City": "Cota City is a mobile application specifically developed for a football school in Cotacachi, Ecuador. It optimizes the management of student data, tuition payments, class schedules, and other administrative tasks, making it an invaluable tool for teachers and administrators. The app is designed to handle the dynamic needs of a sports academy, ensuring that all information is updated in real-time. It uses Flutter for a smooth interface, while Node.js with GraphQL enables efficient data management in the backend. MongoDB is used for flexible storage, and OneSignal provides a reliable notification system. Together, Cota City is a comprehensive solution that improves operational efficiency and supports the growth of the football school.",
+
+    "MultiQuiz": "MultiQuiz is an interactive mini-game that offers users a fun and engaging way to test their knowledge on a variety of topics. The app allows users to log in and participate in quizzes that challenge their understanding, providing immediate feedback on their performance. At the end of each quiz, MultiQuiz offers a detailed breakdown of correct and incorrect answers, helping users learn from their mistakes. It also includes customizable avatar creation, adding a personal touch to the gaming experience. With secure authentication via Google and email/password, MultiQuiz is designed to be both entertaining and secure. Developed with Flutter and Firebase, it combines a smooth interface with a powerful backend to deliver a truly interactive experience.",
+
+    "My Portfolio": "My portfolio is more than just a website: it is my personal showcase and a complete presentation of my professional journey. This platform highlights my skills, projects, and experience in modern web development. Precisely designed using Angular 19, Tailwind CSS, and Material CDK, the portfolio blends visual appeal with functional excellence. It reflects not only my technical abilities but also my commitment to continuous learning and innovation. Each project presented on the site includes detailed descriptions and technological perspectives, offering visitors an in-depth look at my approach to problem-solving and software design. Whether you are a potential employer or a fellow developer, this portfolio provides a clear view of my career and the technologies that drive my work."
+  },
+
+  "footer": {
+    "title": "Interesting Working <b>With Me</b>?",
+    "description": "I am always open to exciting opportunities and collaborations! If you're looking for a dedicated professional with a passion for innovation and problem-solving, let's connect. Feel free to reach out to discuss how we can work together to create something amazing."
+  },
+
+  "about": {
+    "title": "Software Developer",
+    "description": "I am a passionate software developer with a strong foundation in problem-solving and innovation. My ability to think critically and manage time effectively allows me to build efficient solutions while meeting deadlines. I thrive in team environments, fostering open communication and collaboration to achieve common goals. With a mindset focused on adaptability and creativity, I embrace challenges as opportunities to grow and innovate. My empathy and conflict resolution skills enable me to work well with diverse teams, ensuring a positive and productive work environment.",
+    "buttonText": "Hire Me",
+    "softSkills": "Soft Skills",
+    "intro": "I excel in teamwork, adaptability, and problem-solving, ensuring smooth collaboration in dynamic environments. Strong communication and critical thinking allow me to tackle challenges effectively while maintaining a growth mindset.",
+    "skils": {
+      "Empathy": {
+        "name": "Empathy",
+        "description": "The ability to understand and share the feelings of others, fostering stronger relationships."
+      },
+      "Critical Thinking": {
+        "name": "Critical Thinking",
+        "description": "Analyzing situations objectively to make informed decisions and solve complex problems."
+      },
+      "Time Management": {
+        "name": "Time Management",
+        "description": "Effectively managing your time to maximize productivity and meet deadlines."
+      },
+      "Adaptability": {
+        "name": "Adaptability",
+        "description": "Being able to adjust to new conditions and embrace change with a positive mindset."
+      },
+      "Conflict Resolution": {
+        "name": "Conflict Resolution",
+        "description": "Handling disagreements constructively to reach mutual agreements and maintain harmony."
+      },
+      "Teamwork": {
+        "name": "Teamwork",
+        "description": "Collaborating effectively with others to achieve common goals."
+      },
+      "Communication": {
+        "name": "Communication",
+        "description": "Conveying ideas clearly and listening actively to foster mutual understanding."
+      },
+      "Creativity": {
+        "name": "Creativity",
+        "description": "Thinking outside the box to find innovative solutions and improve processes."
+      }
+    }
+  },
+
+  "certificates": {
+    "title": "My Certificates",
+    "description": "I have earned multiple certifications that showcase my expertise in both frontend and backend development. These certifications highlight my dedication to continuous learning and my commitment to staying up to date with the latest industry trends and technologies. By constantly improving my skills, I strive to deliver high-quality solutions and stay ahead in the ever-evolving world of software development.",
+    "courses": {
+      "Complete Guide to MongoDB": {
+        "title": "Complete Guide to MongoDB",
+        "description": "Learn how to design, manage, and optimize NoSQL databases with MongoDB. This course covers CRUD operations, indexing, aggregation, and best practices for data modeling."
+      },
+      "Angular: From Zero to Expert": {
+        "title": "Angular: From Zero to Expert",
+        "description": "Master Angular from the basics to advanced concepts. Learn how to build scalable and dynamic web applications using components, services, RxJS, and state management."
+      },
+      "Layout with Angular CDK and Tailwind": {
+        "title": "Layout with Angular CDK and Tailwind",
+        "description": "Learn how to create efficient and responsive UI layouts using Angular CDK and Tailwind CSS. This course focuses on component customization, styling, and performance optimization."
+      },
+      "Technical Test: Frontend Development with Angular": {
+        "title": "Technical Test: Frontend Development with Angular",
+        "description": "Successfully completed a technical test focused on Angular development, demonstrating proficiency in component-based architecture, state management, and application performance optimization."
+      },
+      "SOLID Principles and Clean Code": {
+        "title": "SOLID Principles and Clean Code",
+        "description": "Learn and apply SOLID principles to write maintainable, scalable, and efficient code. This course emphasizes clean coding practices and best design patterns."
+      },
+      "Intermediate Level Flutter": {
+        "title": "Intermediate Level Flutter",
+        "description": "Enhance Flutter development skills by learning advanced UI components, state management techniques, animations, and API integration to build high-performance mobile applications."
+      },
+      "Flutter: From Zero to Expert": {
+        "title": "Flutter: From Zero to Expert",
+        "description": "Master Flutter and Dart from the basics to advanced concepts. Build cross-platform mobile applications with custom widgets, animations, and backend integration."
+      },
+      "TypeScript Fundamentals": {
+        "title": "TypeScript Fundamentals",
+        "description": "Understand TypeScript’s core features, including types, interfaces, generics, and advanced object-oriented programming concepts. Learn how to improve JavaScript code with strong typing and scalability."
+      },
+      "Asynchrony with JavaScript": {
+        "title": "Asynchrony with JavaScript",
+        "description": "Master asynchronous programming in JavaScript, covering callbacks, promises, and async/await. Learn best practices to handle API requests, event loops, and concurrency efficiently."
+      }
+    },
+     "show":"Show"
+  }
+}

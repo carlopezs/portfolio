@@ -19,6 +19,7 @@ import { ToolChipComponent } from '@components/projects/tool-chip/tool-chip.comp
 import { ActivatedRoute, Router } from '@angular/router';
 import { take } from 'rxjs';
 import { Meta, Title } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
@@ -28,6 +29,7 @@ import { Meta, Title } from '@angular/platform-browser';
     MenuProjectsMobileComponent,
     ProjectsMenuLaptopComponent,
     ToolChipComponent,
+    TranslateModule,
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',

@@ -1,12 +1,12 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
-import { Job } from '@models/job.model';
 import { SoftSkill } from '@models/soft-skill.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'about-job',
-  imports: [CommonModule, MatIcon],
+  imports: [CommonModule, MatIcon, TranslateModule],
   templateUrl: './job.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

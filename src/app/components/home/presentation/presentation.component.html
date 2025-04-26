@@ -4,7 +4,7 @@
   <div
     class="flex flex-col items-center laptop:items-start justify-center phone:text-center laptop:text-left laptop:pr-80 laptop:ml-8 space-y-5"
   >
-    <h1 class="animate-fade-right mt-4 text-xl">Hi, I'm Carlos</h1>
+    <h1 class="animate-fade-right mt-4 text-xl">{{"hero.greeting" |translate}} </h1>
 
     <img
       class="animate-fade-up object-scale-down laptop:hidden bg-secondary rounded-full w-40 h-40"
@@ -12,11 +12,10 @@
       src="images/me/me2.webp"
     />
 
-    <h1 class="animate-fade-right text-3xl font-bold">Fullstack Developer</h1>
+    <h1 class="animate-fade-right text-3xl font-bold">{{"hero.title" |translate}}</h1>
 
     <h3 class="animate-fade-right text-lg hidden laptop:block">
-      Software Engineer with expertise in full-stack development, creating
-      innovative solutions using Angular, Java Spring Boot, Dart, and Flutter.
+     {{"hero.description" | translate}}
     </h3>
 
     <div class="pb-7 flex space-x-10">

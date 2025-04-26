@@ -8,10 +8,11 @@ import {
 import { Job } from '@models/job.model';
 import { jobs as dataJobs } from '@data/jobs';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'home-experience',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

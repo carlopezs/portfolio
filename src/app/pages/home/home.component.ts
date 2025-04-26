@@ -8,6 +8,7 @@ import { RecentProjectsComponent } from '@components/home/recent-projects/recent
 import { FooterComponent } from '../../components/home/footer/footer.component';
 import { SocialNetworkService } from 'app/services/social-network.service';
 import { Meta, Title } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +21,7 @@ import { Meta, Title } from '@angular/platform-browser';
     RecentProjectsComponent,
     FooterComponent,
     FooterComponent,
+    TranslateModule
   ],
   templateUrl: './home.component.html',
 })

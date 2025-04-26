@@ -3,13 +3,10 @@
     class="flex flex-col-reverse space-y-reverse space-y-4 items-center mb-10 laptop:flex-row laptop:justify-between"
   >
     <div class="flex flex-col space-y-4 laptop:w-1/2">
-      <h1 class="text-xl">Interesting Working <b>With Me?</b></h1>
+      <h1 class="text-xl" [innerHTML]="'footer.title' |translate"></h1>
 
       <p class="text-sm">
-        I am always open to exciting opportunities and collaborations! If you're
-        looking for a dedicated professional with a passion for innovation and
-        problem-solving, let's connect. Feel free to reach out to discuss how we
-        can work together to create something amazing.
+        {{'footer.description' | translate}}
       </p>
     </div>
 

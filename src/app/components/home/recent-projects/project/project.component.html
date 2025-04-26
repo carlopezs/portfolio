@@ -15,7 +15,7 @@
       </div>
 
       <p class="m-0 text-sm   text-secondary line-clamp-4  text-justify">
-        {{project().description}}
+        {{'projects.' + project().title | translate}}
       </p>
       <div class="flex flex-row laptop:justify-start">
 
@@ -27,7 +27,7 @@
         >
           <div class="flex justify-center items-center space-x-2">
 
-            <span class="text-sm">View More</span>
+            <span class="text-sm">{{"myRecentProjects.viewMore" | translate}}</span>
           </div>
         </button>
 

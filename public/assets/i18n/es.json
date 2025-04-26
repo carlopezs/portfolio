@@ -1,0 +1,161 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "project": "Proyectos",
+    "certificates": "Certificados",
+    "downloadCV": "Descargar CV"
+  },
+  "languages": {
+    "es": "Español",
+    "en": "Ingles"
+  },
+  "hero": {
+    "greeting": "Hola, soy Carlos",
+    "title": "Desarrollador Fullstack",
+    "description": "Ingeniero de Software con experiencia en desarrollo full-stack, creando soluciones innovadoras usando Angular, Java Spring Boot, Dart y Flutter.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "description": "A lo largo de mi carrera, he desarrollado un conjunto sólido de habilidades técnicas que me permiten construir soluciones eficientes y escalables. Tengo experiencia tanto en desarrollo frontend como backend, utilizando tecnologías modernas para crear aplicaciones intuitivas, optimizadas y de alto rendimiento."
+  },
+  "education": {
+    "title": "Tengo un <b> Título Universitario </b> en  <b>Ingeniería de Software.</b>",
+    "location": "Vivo en <b>Ibarra</b>, una ciudad escénica y culturalmente rica en el norte de  <b>Ecuador</b>.",
+    "description": "Tengo un Título Universitario en Ingeniería de Software de la Universidad Técnica del Norte. A lo largo de mi carrera, he trabajado en múltiples equipos, contribuyendo al desarrollo de soluciones de software innovadoras, eficientes y escalables. Mi experiencia incluye colaborar con profesionales diversos, adaptarme a nuevas tecnologías y resolver desafíos complejos en desarrollo de software."
+  },
+  "experience": {
+    "title": "Mi Experiencia",
+    "description": "Tengo experiencia en desarrollo web con <b>Angular</b>, así como en desarrollo de aplicaciones móviles usando <b>Flutter</b>. En el backend, he trabajado con <b>Node.js</b> y <b>Java</b>. He contribuido a proyectos en empresas como <b>Gestor</b>, <b>NousClick</b>, <b>Plus</b> e <b>Icarus</b>.",
+    "companies": {
+      "now": "Actualidad",
+
+      "Gestor": {
+        "description": "Un proveedor líder en tecnología financiera para la banca de inversión en América Latina. Participé en el desarrollo de plataformas que optimizan operaciones financieras, garantizando alto rendimiento y seguridad."
+      },
+      "Icarus": {
+        "description": "Un proyecto emprendedor personal con amigos, donde nos enfocamos en brindar soluciones de ingeniería de software en Ecuador, particularmente en Ibarra. Desarrollamos aplicaciones móviles y sitios web de alto rendimiento para ayudar a las empresas a optimizar sus procesos."
+      },
+      "Plus": {
+        "description": "Un proveedor de internet en Ibarra, donde realicé mis prácticas preprofesionales. Durante este tiempo, apoyé diversos proyectos de software internos, adquiriendo experiencia práctica en el desarrollo de soluciones adaptadas a las necesidades de la empresa."
+      },
+      "Nous": {
+        "description": "Mi primera experiencia profesional, donde contribuí al desarrollo de aplicaciones móviles y sitios web para empresas que buscaban modernizar sus operaciones. Este rol me ayudó a construir una base sólida en desarrollo de software y transformación digital."
+      }
+    },
+    "navigation": {
+      "previous": "Anterior",
+      "next": "Siguiente"
+    }
+  },
+
+  "myRecentProjects": {
+    "title": "Mis Proyectos Recientes",
+    "description": "Aquí algunos de los proyectos más recientes en los que he trabajado, combinando innovación, eficiencia y tecnología de vanguardia. Cada uno representa un desafío único y un paso adelante en la entrega de soluciones de alta calidad.",
+    "viewMore": "Ver más"
+  },
+
+  "projects": {
+    "Te Ayudo App": "Te Ayudo App es una aplicación innovadora creada por y para niños con autismo. Está diseñada para facilitar la comunicación y la organización diaria mediante el uso de pictogramas y horarios personalizados. La app empodera a los niños al proporcionar una interfaz intuitiva que les ayuda a expresar sus necesidades y gestionar tareas cotidianas, además de ofrecer a padres y educadores una herramienta confiable para hacer seguimiento al progreso y adaptar rutinas según sea necesario. Desarrollada con Flutter, Firebase y OneSignal para notificaciones en tiempo real, la aplicación cuenta con métodos de autenticación robustos mediante correo electrónico, contraseña y acceso con Google, garantizando seguridad y facilidad de uso. Su arquitectura escalable la convierte en una solución versátil para instituciones educativas y centros de terapia que buscan integrar la tecnología en sus programas.",
+
+    "Cota City": "Cota City es una aplicación móvil desarrollada específicamente para una escuela de fútbol en Cotacachi, Ecuador. Optimiza la gestión de datos de estudiantes, pagos de pensiones, horarios de clases y otras tareas administrativas, siendo una herramienta invaluable para docentes y administradores. La app está diseñada para manejar las necesidades dinámicas de una academia deportiva, asegurando que toda la información se actualice en tiempo real. Utiliza Flutter para una interfaz fluida, mientras que Node.js con GraphQL permite una gestión de datos eficiente en el backend. MongoDB se usa para almacenamiento flexible y OneSignal proporciona un sistema de notificaciones confiable. En conjunto, Cota City es una solución integral que mejora la eficiencia operativa y apoya el crecimiento de la escuela de fútbol.",
+
+    "MultiQuiz": "MultiQuiz es un minijuego interactivo que ofrece a los usuarios una forma divertida y atractiva de poner a prueba sus conocimientos en una variedad de temas. La aplicación permite iniciar sesión y participar en cuestionarios que desafían su comprensión, brindando retroalimentación inmediata sobre el rendimiento. Al final de cada cuestionario, MultiQuiz ofrece un desglose detallado de respuestas correctas e incorrectas, ayudando a los usuarios a aprender de sus errores. También incluye la creación de avatares personalizables, añadiendo un toque personal a la experiencia de juego. Con autenticación segura mediante Google y correo/contraseña, MultiQuiz está diseñado para ser tanto entretenido como seguro. Desarrollado con Flutter y Firebase, combina una interfaz fluida con un backend potente para ofrecer una experiencia verdaderamente interactiva.",
+
+    "My Portfolio": "Mi portafolio es más que un sitio web: es mi vitrina personal y una presentación completa de mi trayectoria profesional. Esta plataforma destaca mis habilidades, proyectos y experiencia en desarrollo web moderno. Diseñado con precisión usando Angular 19, Tailwind CSS y Material CDK, el portafolio combina atractivo visual con excelencia funcional. Refleja no solo mis capacidades técnicas, sino también mi compromiso con el aprendizaje continuo y la innovación. Cada proyecto presentado en el sitio incluye descripciones detalladas y perspectivas tecnológicas, ofreciendo a los visitantes una mirada profunda a mi enfoque para la resolución de problemas y el diseño de software. Ya seas un empleador potencial o un desarrollador colega, este portafolio brinda una visión clara de mi carrera y de las tecnologías que impulsan mi trabajo."
+  },
+
+  "footer": {
+    "title": "¿Te interesa trabajar <b>Conmigo</b>?",
+    "description": "¡Siempre estoy abierto a oportunidades y colaboraciones emocionantes! Si estás buscando un profesional comprometido, con pasión por la innovación y la resolución de problemas, conectemos. No dudes en contactarme para conversar sobre cómo podemos trabajar juntos y crear algo increíble."
+  },
+
+  "about": {
+    "title": "Desarrollador de Software",
+    "description": "Soy un desarrollador de software apasionado con una sólida base en resolución de problemas e innovación. Mi habilidad para pensar de manera crítica y administrar el tiempo de manera efectiva me permite construir soluciones eficientes mientras cumplo con los plazos establecidos. Me desenvuelvo bien en ambientes de trabajo en equipo, fomentando la comunicación abierta y la colaboración para alcanzar objetivos comunes. Con una mentalidad enfocada en la adaptabilidad y la creatividad, veo los desafíos como oportunidades para crecer e innovar. Mis habilidades de empatía y resolución de conflictos me permiten trabajar eficazmente con equipos diversos, asegurando un ambiente de trabajo positivo y productivo.",
+    "buttonText": "Contáctame",
+
+    "softSkills": "Habilidades Blandas",
+    "intro": "Me destaco en el trabajo en equipo, la adaptabilidad y la resolución de problemas, asegurando una colaboración fluida en entornos dinámicos. Una comunicación sólida y el pensamiento crítico me permiten enfrentar los desafíos de manera efectiva, manteniendo una mentalidad de crecimiento.",
+
+    "skils": {
+      "Empathy": {
+        "name": "Empatía",
+        "description": "La capacidad de comprender y compartir los sentimientos de los demás, fomentando relaciones más sólidas."
+      },
+      "Critical Thinking": {
+        "name": "Pensamiento Crítico",
+        "description": "Analizar situaciones de manera objetiva para tomar decisiones informadas y resolver problemas complejos."
+      },
+      "Time Management": {
+        "name": "Gestión del Tiempo",
+        "description": "Gestionar eficazmente el tiempo para maximizar la productividad y cumplir con los plazos establecidos."
+      },
+      "Adaptability": {
+        "name": "Adaptabilidad",
+        "description": "Ser capaz de adaptarse a nuevas condiciones y abrazar el cambio con una mentalidad positiva."
+      },
+      "Conflict Resolution": {
+        "name": "Resolución de Conflictos",
+        "description": "Manejar desacuerdos de manera constructiva para alcanzar acuerdos mutuos y mantener la armonía."
+      },
+      "Teamwork": {
+        "name": "Trabajo en Equipo",
+        "description": "Colaborar eficazmente con otros para alcanzar objetivos comunes."
+      },
+      "Communication": {
+        "name": "Comunicación",
+        "description": "Transmitir ideas con claridad y escuchar activamente para fomentar el entendimiento mutuo."
+      },
+      "Creativity": {
+        "name": "Creatividad",
+        "description": "Pensar fuera de lo convencional para encontrar soluciones innovadoras y mejorar procesos."
+      }
+    }
+  },
+  "certificates": {
+    "title": "Mis Certificados",
+    "description": "He obtenido múltiples certificaciones que demuestran mi experiencia tanto en el desarrollo frontend como backend. Estas certificaciones destacan mi dedicación al aprendizaje continuo y mi compromiso de mantenerme actualizado con las últimas tendencias y tecnologías de la industria. Al mejorar constantemente mis habilidades, me esfuerzo por ofrecer soluciones de alta calidad y mantenerme a la vanguardia en el mundo en constante evolución del desarrollo de software.",
+    "courses": {
+      "Complete Guide to MongoDB": {
+        "title": "Guía Completa de MongoDB",
+        "description": "Aprende a diseñar, gestionar y optimizar bases de datos NoSQL con MongoDB. Este curso cubre operaciones CRUD, indexación, agregación y mejores prácticas para el modelado de datos."
+      },
+      "Angular: From Zero to Expert": {
+        "title": "Angular: De Cero a Experto",
+        "description": "Domina Angular desde los conceptos básicos hasta avanzados. Aprende a construir aplicaciones web escalables y dinámicas usando componentes, servicios, RxJS y gestión de estados."
+      },
+      "Layout with Angular CDK and Tailwind": {
+        "title": "Layout con Angular CDK y Tailwind",
+        "description": "Aprende a crear interfaces de usuario eficientes y responsivas usando Angular CDK y Tailwind CSS. Este curso se enfoca en la personalización de componentes, estilos y optimización del rendimiento."
+      },
+      "Technical Test: Frontend Development with Angular": {
+        "title": "Prueba Técnica: Desarrollo Frontend con Angular",
+        "description": "Prueba técnica completada con éxito enfocada en el desarrollo con Angular, demostrando habilidades en arquitectura basada en componentes, gestión de estado y optimización del rendimiento de aplicaciones."
+      },
+      "SOLID Principles and Clean Code": {
+        "title": "Principios SOLID y Código Limpio",
+        "description": "Aprende y aplica los principios SOLID para escribir código mantenible, escalable y eficiente. Este curso enfatiza las prácticas de código limpio y los mejores patrones de diseño."
+      },
+      "Intermediate Level Flutter": {
+        "title": "Flutter Nivel Intermedio",
+        "description": "Mejora tus habilidades en Flutter aprendiendo componentes avanzados de UI, técnicas de gestión de estado, animaciones e integración de APIs para construir aplicaciones móviles de alto rendimiento."
+      },
+      "Flutter: From Zero to Expert": {
+        "title": "Flutter: De Cero a Experto",
+        "description": "Domina Flutter y Dart desde los conceptos básicos hasta los avanzados. Construye aplicaciones móviles multiplataforma con widgets personalizados, animaciones e integración de backend."
+      },
+      "TypeScript Fundamentals": {
+        "title": "Fundamentos de TypeScript",
+        "description": "Comprende las características principales de TypeScript, incluyendo tipos, interfaces, genéricos y conceptos avanzados de programación orientada a objetos. Aprende a mejorar el código JavaScript con tipado fuerte y escalabilidad."
+      },
+      "Asynchrony with JavaScript": {
+        "title": "Asincronía con JavaScript",
+        "description": "Domina la programación asincrónica en JavaScript, cubriendo callbacks, promesas y async/await. Aprende las mejores prácticas para manejar solicitudes API, bucles de eventos y concurrencia de manera eficiente."
+      }
+    },
+    "show":"Ver"
+  }
+}

@@ -10,9 +10,9 @@
     ></mat-icon>
   </div>
 
-  <p class="font-bold text-lg">{{ softSkill().title }}</p>
+  <p class="font-bold text-lg">{{ "about.skils." + softSkill().title + ".name" | translate }}</p>
 
   <p class="text-sm">
-    {{ softSkill().description }}
+    {{ "about.skils." + softSkill().title + ".description" | translate }}
   </p>
 </div>

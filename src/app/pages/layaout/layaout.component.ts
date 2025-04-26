@@ -18,10 +18,11 @@ import { MenuLaptopComponent } from '@components/general/menu-laptop/menu-laptop
 import { isPlatformBrowser } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { first } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-layaout',
-  imports: [RouterOutlet, MenuMobileComponent, MenuLaptopComponent],
+  imports: [RouterOutlet, MenuMobileComponent],
   templateUrl: './layaout.component.html',
   styleUrl: './layaout.component.scss',
   host: {
@@ -31,6 +32,7 @@ import { first } from 'rxjs';
 })
 export class LayaoutComponent {
   private platformId = inject(PLATFORM_ID);
+  private translate = inject(TranslateService);
 
   private appRef = inject(ApplicationRef);
 

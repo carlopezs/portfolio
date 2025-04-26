@@ -1,61 +1,93 @@
 <div
-  class="flex flex-row justify-between p-3 items-center bg-primary text-white h-20  laptop:hidden"
+  class="flex flex-row justify-between p-3 items-center bg-primary text-white h-20 laptop:hidden"
 >
   <button mat-icon-button (click)="toogleSideNav()" aria-label="Menu">
     <mat-icon class="text-white">menu</mat-icon>
   </button>
 
   <div class="flex space-x-2">
-
-
     <li class="ml-auto flex cursor-pointer">
       <button class="flex text-white" [matMenuTriggerFor]="menu">
         <mat-icon fontIcon="download_2"></mat-icon>
-        <div>Download CV</div>
+        <div>{{ "navbar.downloadCV" | translate }}</div>
       </button>
 
       <mat-menu #menu>
-        <a mat-menu-item href="cv/curriculum_english.pdf" download="carlos-lopez-english.pdf"> English </a>
+        <a
+          mat-menu-item
+          href="cv/curriculum_english.pdf"
+          download="carlos-lopez-english.pdf"
+        >
+          {{ "languages.en" | translate }}</a
+        >
 
-        <a mat-menu-item href="cv/curriculum.pdf" download="carlos-lopez-spanish.pdf"> Spanish </a>
+        <a
+          mat-menu-item
+          href="cv/curriculum.pdf"
+          download="carlos-lopez-spanish.pdf"
+        >
+          {{ "languages.es" | translate }}
+        </a>
       </mat-menu>
     </li>
   </div>
 </div>
 
-<general-menu-laptop
-
-[routes]="routes()"
-/>
-
+<general-menu-laptop [routes]="routes()" />
 
 <mat-sidenav-container class="flex-1">
-
-
-
-  <mat-sidenav [opened]="isOpenSideNav()" fixedTopGap="56" class=" block laptop:hidden">
+  <mat-sidenav
+    [opened]="isOpenSideNav()"
+    fixedTopGap="56"
+    class="block laptop:hidden"
+  >
     <ul
       class="flex flex-col p-8 space-y-8 items-start bg-primary text-white h-full"
     >
       @for (route of routes(); track $index) {
-
-      <mat-nav-list
-        class="cursor-pointer"
-        (click)="navigateToOtherSection(route.route)"
-        [routerLink]="[route.route]"
-        [class.common-style-navbar]="activateRoute()?.includes(route.title)"
-      >
-        <div class="flex space-x-2">
-          <mat-icon
-            aria-hidden="false"
-            aria-label="Home"
-            [fontIcon]="route.icon"
-          ></mat-icon>
-          <div>{{ route.name }}</div>
-        </div>
-      </mat-nav-list>
-
+      <li>
+        <mat-nav-list
+          class="cursor-pointer"
+          (click)="navigateToOtherSection(route.route)"
+          [routerLink]="[route.route]"
+          [class.common-style-navbar]="activateRoute()?.includes(route.title)"
+        >
+          <div class="flex space-x-2">
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Home"
+              [fontIcon]="route.icon"
+            ></mat-icon>
+            <div>{{ "navbar." + route.title | translate }}</div>
+          </div>
+        </mat-nav-list>
+      </li>
       }
+      <li>
+        <mat-nav-list>
+          <button class="flex space-x-2 text-white" [matMenuTriggerFor]="menuLanguage">
+            <mat-icon fontIcon="language"></mat-icon>
+            <div>{{ "languages." + currentLang().code | translate }}</div>
+            <mat-icon fontIcon="keyboard_arrow_down"></mat-icon>
+          </button>
+
+          <mat-menu #menuLanguage>
+            @for (lang of languages; track lang.code) {
+
+            <button
+              (click)="changeLanguage(lang.code)"
+              type="btn"
+              mat-menu-item
+              class="flex space-x-2 cursor-pointer"
+            >
+              <!-- <img src="images/flats/gb.svg" width="15" alt="English flat" /> -->
+              <div>{{ "languages." + lang.code | translate }}</div>
+            </button>
+
+            }
+          </mat-menu>
+        </mat-nav-list>
+      </li>
     </ul>
   </mat-sidenav>
   <mat-sidenav-content>

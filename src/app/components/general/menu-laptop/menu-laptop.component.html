@@ -16,15 +16,34 @@
           'common-style-navbar': activateRoute()?.includes(route.title)
         }"
       >
-        {{ route.name }}
+        {{ 'navbar.'+route.title | translate }}
       </div>
       }
     </li>
 
-    <li class="ml-auto flex cursor-pointer">
+    <li class="ml-auto flex space-x-3 cursor-pointer">
+      <button class="flex text-white" [matMenuTriggerFor]="menuLanguage">
+        <div>{{"languages."+ currentLang().code | translate}}</div>
+        <mat-icon fontIcon="keyboard_arrow_down"></mat-icon>
+      </button>
+
+
+      <mat-menu #menuLanguage>
+        @for (lang of languages; track lang.code) {
+
+        <button
+        (click)="changeLanguage(lang.code)"
+        type="btn" mat-menu-item class="flex space-x-2 cursor-pointer">
+          <!-- <img src="images/flats/gb.svg" width="15" alt="English flat" /> -->
+          <div>{{ "languages." + lang.code| translate }}</div>
+        </button>
+
+        }
+      </mat-menu>
+
       <button class="flex text-white" [matMenuTriggerFor]="menu">
         <mat-icon fontIcon="download_2"></mat-icon>
-        <div>Download CV</div>
+        <div>{{"navbar.downloadCV" | translate}}</div>
       </button>
 
       <mat-menu #menu>
@@ -36,7 +55,7 @@
         >
           <div class="flex space-x-2">
             <img src="images/flats/gb.svg" width="15" alt="English flat" />
-            <div>English</div>
+            <div>{{'languages.en' | translate}}</div>
           </div>
         </a>
 
@@ -48,7 +67,7 @@
         >
           <div class="flex space-x-2">
             <img src="images/flats/co.svg" width="15" alt="English flat" />
-            <div>Spanish</div>
+            <div>{{'languages.es' | translate}}</div>
           </div>
         </a>
       </mat-menu>

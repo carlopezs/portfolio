@@ -17,11 +17,12 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Project } from '@models/project.model';
+import { TranslateModule } from '@ngx-translate/core';
 import { ProjectsService } from 'app/services/projects.service';
 
 @Component({
   selector: 'projects-menu-laptop',
-  imports: [ScrollingModule, CommonModule],
+  imports: [ScrollingModule, CommonModule, TranslateModule],
   templateUrl: './projects-menu-laptop.component.html',
   styleUrl: './projects-menu-laptop.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -3,9 +3,10 @@ import { Project } from '@models/project.model';
 import { projects as dataProjects } from '@data/projects';
 import { ProjectComponent } from './project/project.component';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'home-recent-projects',
-  imports: [ProjectComponent],
+  imports: [ProjectComponent, TranslateModule],
   templateUrl: './recent-projects.component.html',
   styleUrl: './recent-projects.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

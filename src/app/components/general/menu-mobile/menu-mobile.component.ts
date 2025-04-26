@@ -17,7 +17,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
 import { RouteApp } from '@models/routes.model';
-import { MenuLaptopComponent } from "../menu-laptop/menu-laptop.component";
+import { MenuLaptopComponent } from '../menu-laptop/menu-laptop.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { LanguageService } from 'app/services/language.service';
 
 @Component({
   selector: 'general-menu-mobile',
@@ -32,8 +34,8 @@ import { MenuLaptopComponent } from "../menu-laptop/menu-laptop.component";
     MatButtonModule,
     MatMenuModule,
     MenuLaptopComponent,
-
-],
+    TranslateModule,
+  ],
   templateUrl: './menu-mobile.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styles: `mat-sidenav {
@@ -42,14 +44,24 @@ import { MenuLaptopComponent } from "../menu-laptop/menu-laptop.component";
     }
 
     `,
-
 })
 export class MenuMobileComponent {
   private location = inject(Location);
+  private languageService = inject(LanguageService)
 
   public isOpenSideNav = signal(false);
   public routes = input.required<RouteApp[]>();
   public actualRoute = linkedSignal(() => this.location.path());
+  public languages = [
+    {
+      code: 'en',
+      language: 'English',
+    },
+    {
+      code: 'es',
+      language: 'Spanish',
+    },
+  ];
   public activateRoute = computed<string | undefined>(() => {
     if (!this.actualRoute()) return 'home';
 
@@ -61,7 +73,7 @@ export class MenuMobileComponent {
     const principalPath =
       routePaths.length >= 3 ? routePaths[1] : routePaths[0];
 
-    return principalPath == undefined  || principalPath == 'portfolio'
+    return principalPath == undefined || principalPath == 'portfolio'
       ? 'home'
       : principalPath;
   });
@@ -73,5 +85,11 @@ export class MenuMobileComponent {
   public navigateToOtherSection(route: string) {
     this.actualRoute.set(route);
     this.isOpenSideNav.set(false);
+  }
+
+  public currentLang = linkedSignal(()=> this.languages.find((lang)=> lang.code == this.languageService.currentLanguage() ) ?? this.languages[0]);
+
+  public changeLanguage(codeLang:string) {
+    this.languageService.changeLanguage(codeLang);
   }
 }

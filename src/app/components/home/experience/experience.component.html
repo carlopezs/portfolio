@@ -5,13 +5,10 @@
     class="flex flex-col space-y-7 items-center laptop:justify-between laptop:flex-row laptop:space-x-10"
   >
     <div class="flex flex-col laptop:w-1/2">
-      <h1 class="text-xl font-bold">My Experience</h1>
+      <h1 class="text-xl font-bold">{{"experience.title" | translate}}</h1>
 
-      <p class="text-sm">
-        I have experience in web development with Angular, as well as mobile app
-        development using Flutter. On the backend, I have worked with Node.js
-        and Java. I have contributed to projects in companies like Gestor,
-        NousClick, Plus, and Icarus
+      <p [innerHTML]=" 'experience.description' | translate" class="text-sm">
+
       </p>
     </div>
 
@@ -24,7 +21,7 @@
             <p class="text-sm">
               {{ actualJob().initDate | date : "dd/MM/YY" }} -
               @if(isTheSameDateToday(actualJob().endDate )) {
-                Present
+                {{"experience.companies.now" | translate}}
               }@else{
                 {{ actualJob().endDate | date : "dd/MM/YY" }}
               }
@@ -37,7 +34,7 @@
         <hr />
 
         <p class="text-sm mb-40">
-          {{ actualJob().description }}
+          {{ "experience.companies." + actualJob().title + ".description"  | translate }}
         </p>
       </div>
 
@@ -52,7 +49,7 @@
             'hover:underline': !isFirstIndex()
           }"
         >
-          Previous
+          {{"experience.navigation.previous" | translate}}
         </button>
         <button
           type="btn"
@@ -62,7 +59,7 @@
           }"
           (click)="nextJob()"
         >
-          Next
+        {{"experience.navigation.next" | translate}}
         </button>
       </div>
     </div>

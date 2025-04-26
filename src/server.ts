@@ -8,29 +8,24 @@ import {
 import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { getContext } from '@netlify/angular-runtime/context'
+import { getContext } from '@netlify/angular-runtime/context';
+import { SERVER_LANG_TOKEN } from 'app/services/language.service';
+import { APP_BASE_HREF } from '@angular/common';
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
-const angularAppEngine = new AngularAppEngine()
+const angularAppEngine = new AngularAppEngine();
 
-export async function netlifyAppEngineHandler(request: Request): Promise<Response> {
-  const context = getContext()
+export async function netlifyAppEngineHandler(
+  request: Request
+): Promise<Response> {
+  const context = getContext();
 
-  // Example API endpoints can be defined here.
-  // Uncomment and define endpoints as necessary.
-  // const pathname = new URL(request.url).pathname;
-  // if (pathname === '/api/hello') {
-  //   return Response.json({ message: 'Hello from the API' });
-  // }
-
-  const result = await angularAppEngine.handle(request, context)
-  return result || new Response('Not found', { status: 404 })
+  const result = await angularAppEngine.handle(request, context);
+  return result || new Response('Not found', { status: 404 });
 }
-
-
 
 /**
  * Example Express Rest API endpoints can be defined here.
@@ -52,17 +47,33 @@ app.use(
     maxAge: '1y',
     index: false,
     redirect: false,
-  }),
+
+  })
 );
 
 /**
  * Handle all other requests by rendering the Angular application.
  */
 app.use('/**', (req, res, next) => {
+  const cookies = req.headers.cookie ?? '';
+  const {  baseUrl} = req;
+  const langCookie =
+    cookies.split(';').find((cookie) => cookie.includes('language')) ??
+    'language=en';
+  const [, language] = langCookie.split('=');
+
+  // Proveer el idioma al SERVER_LANG_TOKEN
+  const providers = [
+    { provide: APP_BASE_HREF, useValue: baseUrl },
+    { provide: 'REQUEST', useValue: req },
+    { provide: 'RESPONSE', useValue: res },
+    { provide: SERVER_LANG_TOKEN, useValue: language }, // Proveer el idioma detectado
+  ];
+
   angularApp
-    .handle(req)
+    .handle(req, { providers })
     .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
+      response ? writeResponseToNodeResponse(response, res) : next()
     )
     .catch(next);
 });
@@ -81,4 +92,4 @@ if (isMainModule(import.meta.url)) {
 /**
  * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
  */
-export const reqHandler = createRequestHandler(netlifyAppEngineHandler)
+export const reqHandler = createRequestHandler(netlifyAppEngineHandler);

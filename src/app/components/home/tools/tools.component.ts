@@ -8,10 +8,11 @@ import {
 import { Tool } from '@models/tools.model';
 import { tools as dataTools } from '@data/tools';
 import { AvatarComponent } from '@components/general/avatar/avatar.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'home-tools',
-  imports: [ToolHomeComponent, AvatarComponent],
+  imports: [ToolHomeComponent, AvatarComponent, TranslateModule],
   templateUrl: './tools.component.html',
   styleUrl: './tools.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
