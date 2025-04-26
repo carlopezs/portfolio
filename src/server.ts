@@ -18,14 +18,14 @@ const app = express();
 const angularApp = new AngularNodeAppEngine();
 const angularAppEngine = new AngularAppEngine();
 
-/* export async function netlifyAppEngineHandler(
+export async function netlifyAppEngineHandler(
   request: Request
 ): Promise<Response> {
   const context = getContext();
 
   const result = await angularAppEngine.handle(request, context);
   return result || new Response('Not found', { status: 404 });
-} */
+}
 
 /**
  * Example Express Rest API endpoints can be defined here.
@@ -92,4 +92,4 @@ if (isMainModule(import.meta.url)) {
 /**
  * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
  */
-/* export const reqHandler = createRequestHandler(netlifyAppEngineHandler); */
+export const reqHandler = createRequestHandler(netlifyAppEngineHandler);
