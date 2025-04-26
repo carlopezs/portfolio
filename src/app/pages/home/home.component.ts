@@ -48,7 +48,7 @@ export default class HomeComponent implements OnInit {
 
     this.meta.updateTag({
       name: 'og:image',
-      content: `https://portfolioclopez.netlify.app/images/me/meanimationbg.jpg`,
+      content: `https://portfolioclopez.netlify.app/images/me/mecoffeanimation.webp`,
     });
   }
 }
